@@ -8,6 +8,8 @@ vice/aclocal.m4
 vice/autom4te.cache
 vice/build/Makefile
 vice/build/Makefile.in
+vice/build/mingw32/mingw32-3.4.2-20040916-1
+vice/build/mingw32/source
 vice/config.log
 vice/config.status
 vice/config.status.lineno
@@ -177,6 +179,7 @@ vice/src/arch/win32/.deps
 vice/src/arch/win32/Debug
 vice/src/arch/win32/Makefile
 vice/src/arch/win32/Makefile.in
+vice/src/arch/win32/libarch.a
 vice/src/arch/win32/libs
 vice/src/arch/win32/menuid.h
 vice/src/arch/win32/msvc/msvc_ver.h
@@ -232,6 +235,7 @@ vice/src/c128/Makefile
 vice/src/c128/Makefile.in
 vice/src/c128/libc128.a
 vice/src/c1541
+vice/src/c1541.exe
 vice/src/c64/.deps
 vice/src/c64/Makefile
 vice/src/c64/Makefile.in
@@ -242,6 +246,7 @@ vice/src/c64/cart/libc64cart.a
 vice/src/c64/libc64.a
 vice/src/c64/libc64c128.a
 vice/src/cartconv
+vice/src/cartconv.exe
 vice/src/cbm2/.deps
 vice/src/cbm2/Makefile
 vice/src/cbm2/Makefile.in
@@ -317,9 +322,11 @@ vice/src/lib/Makefile.in
 vice/src/lib/lpng/.deps
 vice/src/lib/lpng/Makefile
 vice/src/lib/lpng/Makefile.in
+vice/src/lib/lpng/libpng.a
 vice/src/lib/zlib/.deps
 vice/src/lib/zlib/Makefile
 vice/src/lib/zlib/Makefile.in
+vice/src/lib/zlib/libz.a
 vice/src/monitor/.deps
 vice/src/monitor/Makefile
 vice/src/monitor/Makefile.in
@@ -333,6 +340,7 @@ vice/src/pet/Makefile
 vice/src/pet/Makefile.in
 vice/src/pet/libpet.a
 vice/src/petcat
+vice/src/petcat.exe
 vice/src/plus4/.deps
 vice/src/plus4/Makefile
 vice/src/plus4/Makefile.in
@@ -419,8 +427,14 @@ vice/src/video/Makefile
 vice/src/video/Makefile.in
 vice/src/video/libvideo.a
 vice/src/x128
+vice/src/x128.exe
 vice/src/x64
+vice/src/x64.exe
 vice/src/xcbm2
+vice/src/xcbm2.exe
 vice/src/xpet
+vice/src/xpet.exe
 vice/src/xplus4
+vice/src/xplus4.exe
 vice/src/xvic
+vice/src/xvic.exe
