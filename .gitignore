@@ -18,6 +18,8 @@ vice/data/C128/Makefile
 vice/data/C128/Makefile.in
 vice/data/C64/Makefile
 vice/data/C64/Makefile.in
+vice/data/C64DTV/Makefile
+vice/data/C64DTV/Makefile.in
 vice/data/CBM-II/Makefile
 vice/data/CBM-II/Makefile.in
 vice/data/DRIVES/Makefile
