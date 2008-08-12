@@ -198,6 +198,7 @@ vice/src/arch/win32/resc64.rc.po.c
 vice/src/arch/win32/resc64_256k.rc.po.c
 vice/src/arch/win32/resc64cat.RES
 vice/src/arch/win32/resc64cat.rc
+vice/src/arch/win32/resc64dtv.rc.po.c
 vice/src/arch/win32/resc64dtvcat.RES
 vice/src/arch/win32/resc64dtvcat.rc
 vice/src/arch/win32/rescbm2.rc.po.c
@@ -252,6 +253,12 @@ vice/src/c64/cart/Makefile.in
 vice/src/c64/cart/libc64cart.a
 vice/src/c64/libc64.a
 vice/src/c64/libc64c128.a
+vice/src/c64/libc64c64dtv.a
+vice/src/c64dtv/.deps
+vice/src/c64dtv/Makefile
+vice/src/c64dtv/Makefile.in
+vice/src/c64dtv/libc64dtv.a
+vice/src/c64dtv/libc64dtvstubs.a
 vice/src/cartconv
 vice/src/cartconv.exe
 vice/src/cbm2/.deps
@@ -429,6 +436,7 @@ vice/src/vicii/.deps
 vice/src/vicii/Makefile
 vice/src/vicii/Makefile.in
 vice/src/vicii/libvicii.a
+vice/src/vicii/libviciidtv.a
 vice/src/video/.deps
 vice/src/video/Makefile
 vice/src/video/Makefile.in
@@ -437,6 +445,8 @@ vice/src/x128
 vice/src/x128.exe
 vice/src/x64
 vice/src/x64.exe
+vice/src/x64dtv
+vice/src/x64dtv.exe
 vice/src/xcbm2
 vice/src/xcbm2.exe
 vice/src/xpet
