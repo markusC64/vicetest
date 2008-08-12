@@ -62,6 +62,9 @@ vice/data/x128.pdb
 vice/data/x64.exe
 vice/data/x64.ilk
 vice/data/x64.pdb
+vice/data/x64dtv.exe
+vice/data/x64dtv.ilk
+vice/data/x64dtv.pdb
 vice/data/xcbm2.exe
 vice/data/xcbm2.ilk
 vice/data/xcbm2.pdb
@@ -195,6 +198,8 @@ vice/src/arch/win32/resc64.rc.po.c
 vice/src/arch/win32/resc64_256k.rc.po.c
 vice/src/arch/win32/resc64cat.RES
 vice/src/arch/win32/resc64cat.rc
+vice/src/arch/win32/resc64dtvcat.RES
+vice/src/arch/win32/resc64dtvcat.rc
 vice/src/arch/win32/rescbm2.rc.po.c
 vice/src/arch/win32/rescbm2cat.RES
 vice/src/arch/win32/rescbm2cat.rc
