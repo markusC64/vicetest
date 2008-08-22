@@ -150,6 +150,7 @@ vice/src/arch/unix/Makefile.in
 vice/src/arch/unix/gp2x/.deps
 vice/src/arch/unix/gp2x/Makefile
 vice/src/arch/unix/gp2x/Makefile.in
+vice/src/arch/unix/gp2x/libarchgp2x.a
 vice/src/arch/unix/gui/.deps
 vice/src/arch/unix/gui/Makefile
 vice/src/arch/unix/gui/Makefile.in
@@ -188,9 +189,11 @@ vice/src/arch/unix/x11/libx11ui.a
 vice/src/arch/unix/x11/xaw/.deps
 vice/src/arch/unix/x11/xaw/Makefile
 vice/src/arch/unix/x11/xaw/Makefile.in
+vice/src/arch/unix/x11/xaw/libxawui.a
 vice/src/arch/unix/x11/xaw/widgets/.deps
 vice/src/arch/unix/x11/xaw/widgets/Makefile
 vice/src/arch/unix/x11/xaw/widgets/Makefile.in
+vice/src/arch/unix/x11/xaw/widgets/libwidgets.a
 vice/src/arch/win32/*.plg
 vice/src/arch/win32/.deps
 vice/src/arch/win32/Debug
@@ -478,3 +481,4 @@ vice/src/xplus4
 vice/src/xplus4.exe
 vice/src/xvic
 vice/src/xvic.exe
+vice/ylwrap
