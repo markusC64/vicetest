@@ -407,7 +407,7 @@ vice/src/resid-fp/configure
 vice/src/resid-fp/envelope.cpp
 vice/src/resid-fp/extfilt.cpp
 vice/src/resid-fp/filter.cpp
-vice/src/resid-fp/libresid.a
+vice/src/resid-fp/libresidfp.a
 vice/src/resid-fp/pot.cpp
 vice/src/resid-fp/sid.cpp
 vice/src/resid-fp/version.cpp
