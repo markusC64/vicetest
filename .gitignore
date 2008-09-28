@@ -199,6 +199,7 @@ vice/src/arch/win32/.deps
 vice/src/arch/win32/Debug
 vice/src/arch/win32/Makefile
 vice/src/arch/win32/Makefile.in
+vice/src/arch/win32/Release
 vice/src/arch/win32/libarch.a
 vice/src/arch/win32/libs
 vice/src/arch/win32/menuid.h
@@ -404,6 +405,7 @@ vice/src/resid-fp/autom4te.cache
 vice/src/resid-fp/config.log
 vice/src/resid-fp/config.status
 vice/src/resid-fp/configure
+vice/src/resid-fp/convolve.cpp
 vice/src/resid-fp/envelope.cpp
 vice/src/resid-fp/extfilt.cpp
 vice/src/resid-fp/filter.cpp
