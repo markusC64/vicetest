@@ -248,6 +248,7 @@ vice/src/arch/win32/resvicii.rc.po.c
 vice/src/arch/win32/utils/.deps
 vice/src/arch/win32/utils/Makefile
 vice/src/arch/win32/utils/Makefile.in
+vice/src/arch/win32/utils/genwinres.exe
 vice/src/arch/win32/vice.ncb
 vice/src/arch/win32/vice.opt
 vice/src/arch/win32/watcom/*.err
