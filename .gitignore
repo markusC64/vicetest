@@ -111,6 +111,7 @@ vice/src/arch/beos/Makefile.in
 vice/src/arch/msdos/.deps
 vice/src/arch/msdos/Makefile
 vice/src/arch/msdos/Makefile.in
+vice/src/arch/msdos/libarch.a
 vice/src/arch/os2/.deps
 vice/src/arch/os2/Makefile
 vice/src/arch/os2/Makefile.in
