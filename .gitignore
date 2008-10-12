@@ -105,9 +105,11 @@ vice/src/arch/amigaos/.deps
 vice/src/arch/amigaos/Makefile
 vice/src/arch/amigaos/Makefile.in
 vice/src/arch/amigaos/intl.c.po.c
+vice/src/arch/amigaos/libarch.a
 vice/src/arch/beos/.deps
 vice/src/arch/beos/Makefile
 vice/src/arch/beos/Makefile.in
+vice/src/arch/beos/libarch.a
 vice/src/arch/msdos/.deps
 vice/src/arch/msdos/Makefile
 vice/src/arch/msdos/Makefile.in
