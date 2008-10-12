@@ -143,6 +143,7 @@ vice/src/arch/os2/watcom/*.sym
 vice/src/arch/riscos/.deps
 vice/src/arch/riscos/Makefile
 vice/src/arch/riscos/Makefile.in
+vice/src/arch/riscos/libarch.a
 vice/src/arch/unix/.deps
 vice/src/arch/unix/Makefile
 vice/src/arch/unix/Makefile.in
@@ -270,6 +271,7 @@ vice/src/c128/Makefile
 vice/src/c128/Makefile.in
 vice/src/c128/libc128.a
 vice/src/c1541
+vice/src/c1541,ff8
 vice/src/c1541.exe
 vice/src/c64/.deps
 vice/src/c64/Makefile
@@ -287,6 +289,7 @@ vice/src/c64dtv/Makefile.in
 vice/src/c64dtv/libc64dtv.a
 vice/src/c64dtv/libc64dtvstubs.a
 vice/src/cartconv
+vice/src/cartconv,ff8
 vice/src/cartconv.exe
 vice/src/cbm2/.deps
 vice/src/cbm2/Makefile
@@ -381,6 +384,7 @@ vice/src/pet/Makefile
 vice/src/pet/Makefile.in
 vice/src/pet/libpet.a
 vice/src/petcat
+vice/src/petcat,ff8
 vice/src/petcat.exe
 vice/src/plus4/.deps
 vice/src/plus4/Makefile
@@ -394,6 +398,7 @@ vice/src/raster/.deps
 vice/src/raster/Makefile
 vice/src/raster/Makefile.in
 vice/src/raster/libraster.a
+vice/src/resid-fp/!RunImage,ff8
 vice/src/resid-fp/.aclocal.out
 vice/src/resid-fp/.autoconf.out
 vice/src/resid-fp/.automake.out
@@ -500,17 +505,23 @@ vice/src/video/Makefile
 vice/src/video/Makefile.in
 vice/src/video/libvideo.a
 vice/src/x128
+vice/src/x128,ff8
 vice/src/x128.exe
 vice/src/x64
+vice/src/x64,ff8
 vice/src/x64.exe
 vice/src/x64dtv
 vice/src/x64dtv.exe
 vice/src/xcbm2
+vice/src/xcbm2,ff8
 vice/src/xcbm2.exe
 vice/src/xpet
+vice/src/xpet,ff8
 vice/src/xpet.exe
 vice/src/xplus4
+vice/src/xplus4,ff8
 vice/src/xplus4.exe
 vice/src/xvic
+vice/src/xvic,ff8
 vice/src/xvic.exe
 vice/ylwrap
