@@ -83,6 +83,7 @@ vice/doc/Makefile.in
 vice/doc/html/Makefile
 vice/doc/html/Makefile.in
 vice/doc/texinfo.tex
+vice/doc/vice.html
 vice/man/Makefile
 vice/man/Makefile.in
 vice/missing
