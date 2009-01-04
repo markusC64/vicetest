@@ -179,6 +179,7 @@ vice/src/arch/unix/macosx/cocoa/view/Makefile.in
 vice/src/arch/unix/readline/.deps
 vice/src/arch/unix/readline/Makefile
 vice/src/arch/unix/readline/Makefile.in
+vice/src/arch/unix/readline/libreadline.a
 vice/src/arch/unix/x11/.deps
 vice/src/arch/unix/x11/Makefile
 vice/src/arch/unix/x11/Makefile.in
