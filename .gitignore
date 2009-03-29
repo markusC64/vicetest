@@ -227,6 +227,8 @@ vice/src/arch/win32/watcom/*.mk1
 vice/src/arch/win32/watcom/*.obj
 vice/src/arch/win32/watcom/*.res
 vice/src/arch/win32/watcom/*.sym
+vice/src/arch/win64/Makefile
+vice/src/arch/win64/Makefile.in
 vice/src/c128/.deps
 vice/src/c128/Makefile
 vice/src/c128/Makefile.in
