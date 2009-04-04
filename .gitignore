@@ -145,6 +145,10 @@ vice/src/arch/riscos/.deps
 vice/src/arch/riscos/Makefile
 vice/src/arch/riscos/Makefile.in
 vice/src/arch/riscos/libarch.a
+vice/src/arch/sdl/.deps
+vice/src/arch/sdl/Makefile
+vice/src/arch/sdl/Makefile.in
+vice/src/arch/sdl/libarch.a
 vice/src/arch/unix/.deps
 vice/src/arch/unix/Makefile
 vice/src/arch/unix/Makefile.in
