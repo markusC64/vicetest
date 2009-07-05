@@ -153,8 +153,12 @@ vice/src/arch/sdl/win32-msvc/*.ncb
 vice/src/arch/sdl/win32-msvc/*.opt
 vice/src/arch/sdl/win32-msvc/*.plg
 vice/src/arch/sdl/win32-msvc/Debug
+vice/src/arch/sdl/win32-msvc/Makefile
+vice/src/arch/sdl/win32-msvc/Makefile.in
 vice/src/arch/sdl/win32-msvc/Release
 vice/src/arch/sdl/win32-msvc/libs
+vice/src/arch/sdl/win64-msvc/Makefile
+vice/src/arch/sdl/win64-msvc/Makefile.in
 vice/src/arch/unix/.deps
 vice/src/arch/unix/Makefile
 vice/src/arch/unix/Makefile.in
