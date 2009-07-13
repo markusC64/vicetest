@@ -157,6 +157,16 @@ vice/src/arch/sdl/win32-msvc/Makefile
 vice/src/arch/sdl/win32-msvc/Makefile.in
 vice/src/arch/sdl/win32-msvc/Release
 vice/src/arch/sdl/win32-msvc/libs
+vice/src/arch/sdl/win32-watcom/*.err
+vice/src/arch/sdl/win32-watcom/*.exe
+vice/src/arch/sdl/win32-watcom/*.lb1
+vice/src/arch/sdl/win32-watcom/*.lib
+vice/src/arch/sdl/win32-watcom/*.lk1
+vice/src/arch/sdl/win32-watcom/*.map
+vice/src/arch/sdl/win32-watcom/*.mk
+vice/src/arch/sdl/win32-watcom/*.mk1
+vice/src/arch/sdl/win32-watcom/*.obj
+vice/src/arch/sdl/win32-watcom/*.sym
 vice/src/arch/sdl/win64-msvc/Makefile
 vice/src/arch/sdl/win64-msvc/Makefile.in
 vice/src/arch/unix/.deps
