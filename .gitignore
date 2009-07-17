@@ -167,6 +167,8 @@ vice/src/arch/sdl/win32-watcom/*.mk
 vice/src/arch/sdl/win32-watcom/*.mk1
 vice/src/arch/sdl/win32-watcom/*.obj
 vice/src/arch/sdl/win32-watcom/*.sym
+vice/src/arch/sdl/win32-watcom/Makefile
+vice/src/arch/sdl/win32-watcom/Makefile.in
 vice/src/arch/sdl/win64-msvc/Makefile
 vice/src/arch/sdl/win64-msvc/Makefile.in
 vice/src/arch/unix/.deps
@@ -510,6 +512,9 @@ vice/src/vdrive/libvdrive.a
 vice/src/vic20/.deps
 vice/src/vic20/Makefile
 vice/src/vic20/Makefile.in
+vice/src/vic20/cart/.deps
+vice/src/vic20/cart/Makefile
+vice/src/vic20/cart/Makefile.in
 vice/src/vic20/libvic20.a
 vice/src/vicii/.deps
 vice/src/vicii/Makefile
