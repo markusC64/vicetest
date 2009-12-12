@@ -151,6 +151,8 @@ vice/src/arch/sdl/Makefile.in
 vice/src/arch/sdl/dingoo-files/Makefile
 vice/src/arch/sdl/dingoo-files/Makefile.in
 vice/src/arch/sdl/libarch.a
+vice/src/arch/sdl/syllable-files/Makefile
+vice/src/arch/sdl/syllable-files/Makefile.in
 vice/src/arch/sdl/win32-msvc/*.ncb
 vice/src/arch/sdl/win32-msvc/*.opt
 vice/src/arch/sdl/win32-msvc/*.plg
@@ -173,6 +175,8 @@ vice/src/arch/sdl/win32-watcom/Makefile
 vice/src/arch/sdl/win32-watcom/Makefile.in
 vice/src/arch/sdl/win64-msvc/Makefile
 vice/src/arch/sdl/win64-msvc/Makefile.in
+vice/src/arch/sdl/xbox/Makefile
+vice/src/arch/sdl/xbox/Makefile.in
 vice/src/arch/unix/.deps
 vice/src/arch/unix/Makefile
 vice/src/arch/unix/Makefile.in
