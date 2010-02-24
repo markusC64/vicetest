@@ -115,6 +115,7 @@ vice/src/arch/amigaos/.deps
 vice/src/arch/amigaos/Makefile
 vice/src/arch/amigaos/Makefile.in
 vice/src/arch/amigaos/intl.c.po.c
+vice/src/arch/amigaos/intl_text.c.po.c
 vice/src/arch/amigaos/libarch.a
 vice/src/arch/beos/.deps
 vice/src/arch/beos/Makefile
@@ -193,6 +194,12 @@ vice/src/arch/unix/gp2x/.deps
 vice/src/arch/unix/gp2x/Makefile
 vice/src/arch/unix/gp2x/Makefile.in
 vice/src/arch/unix/gp2x/libarchgp2x.a
+vice/src/arch/unix/gp2x/minimal/.deps
+vice/src/arch/unix/gp2x/minimal/Makefile
+vice/src/arch/unix/gp2x/minimal/Makefile.in
+vice/src/arch/unix/gp2x/wiz/.deps
+vice/src/arch/unix/gp2x/wiz/Makefile
+vice/src/arch/unix/gp2x/wiz/Makefile.in
 vice/src/arch/unix/gui/.deps
 vice/src/arch/unix/gui/Makefile
 vice/src/arch/unix/gui/Makefile.in
@@ -520,6 +527,7 @@ vice/src/tape/libtape.a
 vice/src/translate.c.po.c
 vice/src/translate.h
 vice/src/translate_table.h
+vice/src/translate_text.c.po.c
 vice/src/vdc/.deps
 vice/src/vdc/Makefile
 vice/src/vdc/Makefile.in
