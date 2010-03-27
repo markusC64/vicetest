@@ -548,6 +548,10 @@ vice/src/vicii/Makefile
 vice/src/vicii/Makefile.in
 vice/src/vicii/libvicii.a
 vice/src/vicii/libviciidtv.a
+vice/src/viciinew/.deps
+vice/src/viciinew/Makefile
+vice/src/viciinew/Makefile.in
+vice/src/viciinew/libviciinew.a
 vice/src/video/.deps
 vice/src/video/Makefile
 vice/src/video/Makefile.in
