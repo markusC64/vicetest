@@ -576,4 +576,5 @@ vice/src/xplus4.exe
 vice/src/xvic
 vice/src/xvic,ff8
 vice/src/xvic.exe
+vice/vice*.spec
 vice/ylwrap
