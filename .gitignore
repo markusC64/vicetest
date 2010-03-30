@@ -224,6 +224,7 @@ vice/src/arch/unix/macosx/cocoa/menu/Makefile.in
 vice/src/arch/unix/macosx/cocoa/view/.deps
 vice/src/arch/unix/macosx/cocoa/view/Makefile
 vice/src/arch/unix/macosx/cocoa/view/Makefile.in
+vice/src/arch/unix/next_open_rhap/vice.info
 vice/src/arch/unix/readline/.deps
 vice/src/arch/unix/readline/Makefile
 vice/src/arch/unix/readline/Makefile.in
@@ -564,6 +565,8 @@ vice/src/x64,ff8
 vice/src/x64.exe
 vice/src/x64dtv
 vice/src/x64dtv.exe
+vice/src/x64sc
+vice/src/x64sc.exe
 vice/src/xcbm2
 vice/src/xcbm2,ff8
 vice/src/xcbm2.exe
