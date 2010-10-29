@@ -65,6 +65,9 @@ vice/data/x64.pdb
 vice/data/x64dtv.exe
 vice/data/x64dtv.ilk
 vice/data/x64dtv.pdb
+vice/data/x64sc.exe
+vice/data/x64sc.ilk
+vice/data/x64sc.pdb
 vice/data/xcbm2.exe
 vice/data/xcbm2.ilk
 vice/data/xcbm2.pdb
