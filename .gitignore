@@ -14,6 +14,8 @@ vice/config.log
 vice/config.status
 vice/config.status.lineno
 vice/configure
+vice/data/*.exp
+vice/data/*.lib
 vice/data/C128/Makefile
 vice/data/C128/Makefile.in
 vice/data/C64/Makefile
@@ -192,8 +194,14 @@ vice/src/arch/sdl/win32-watcom/*.obj
 vice/src/arch/sdl/win32-watcom/*.sym
 vice/src/arch/sdl/win32-watcom/Makefile
 vice/src/arch/sdl/win32-watcom/Makefile.in
+vice/src/arch/sdl/win64-msvc/*.ncb
+vice/src/arch/sdl/win64-msvc/*.suo
+vice/src/arch/sdl/win64-msvc/*.user
 vice/src/arch/sdl/win64-msvc/Makefile
 vice/src/arch/sdl/win64-msvc/Makefile.in
+vice/src/arch/sdl/win64-msvc/libs
+vice/src/arch/sdl/win64-msvc/win64_id.bat
+vice/src/arch/sdl/win64-msvc/x64
 vice/src/arch/sdl/xbox/Makefile
 vice/src/arch/sdl/xbox/Makefile.in
 vice/src/arch/unix/.deps
