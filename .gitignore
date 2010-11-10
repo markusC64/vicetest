@@ -171,11 +171,15 @@ vice/src/arch/sdl/syllable-files/Makefile.in
 vice/src/arch/sdl/win32-msvc/*.ncb
 vice/src/arch/sdl/win32-msvc/*.opt
 vice/src/arch/sdl/win32-msvc/*.plg
+vice/src/arch/sdl/win32-msvc/*.user
+vice/src/arch/sdl/win32-msvc/*.vcproj
 vice/src/arch/sdl/win32-msvc/Debug
 vice/src/arch/sdl/win32-msvc/Makefile
 vice/src/arch/sdl/win32-msvc/Makefile.in
 vice/src/arch/sdl/win32-msvc/Release
 vice/src/arch/sdl/win32-msvc/libs
+vice/src/arch/sdl/win32-msvc/vice.sln
+vice/src/arch/sdl/win32-msvc/vice.suo
 vice/src/arch/sdl/win32-watcom/*.err
 vice/src/arch/sdl/win32-watcom/*.exe
 vice/src/arch/sdl/win32-watcom/*.lb1
