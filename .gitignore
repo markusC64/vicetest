@@ -400,14 +400,6 @@ vice/src/imagecontents/Makefile.in
 vice/src/imagecontents/libimagecontents.a
 vice/src/lib/Makefile
 vice/src/lib/Makefile.in
-vice/src/lib/lpng/.deps
-vice/src/lib/lpng/Makefile
-vice/src/lib/lpng/Makefile.in
-vice/src/lib/lpng/libpng.a
-vice/src/lib/zlib/.deps
-vice/src/lib/zlib/Makefile
-vice/src/lib/zlib/Makefile.in
-vice/src/lib/zlib/libz.a
 vice/src/monitor/.deps
 vice/src/monitor/Makefile
 vice/src/monitor/Makefile.in
