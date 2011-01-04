@@ -1,3 +1,4 @@
+vice/*.gz
 vice/.aclocal.out
 vice/.autoconf.out
 vice/.autoheader.out
@@ -445,6 +446,7 @@ vice/src/resid-dtv/libresiddtv.a
 vice/src/resid-dtv/pot.cpp
 vice/src/resid-dtv/sid.cpp
 vice/src/resid-dtv/siddefs.h
+vice/src/resid-dtv/siddtvdefs.h
 vice/src/resid-dtv/version.cpp
 vice/src/resid-dtv/voice.cpp
 vice/src/resid-dtv/wave.cpp
