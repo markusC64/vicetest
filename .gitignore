@@ -123,6 +123,7 @@ vice/src/arch/Makefile.in
 vice/src/arch/amigaos/.deps
 vice/src/arch/amigaos/Makefile
 vice/src/arch/amigaos/Makefile.in
+vice/src/arch/amigaos/genintl_h.sh
 vice/src/arch/amigaos/intl.c.po.c
 vice/src/arch/amigaos/intl_text.c.po.c
 vice/src/arch/amigaos/libarch.a
@@ -344,6 +345,7 @@ vice/src/crtc/.deps
 vice/src/crtc/Makefile
 vice/src/crtc/Makefile.in
 vice/src/crtc/libcrtc.a
+vice/src/debug.h
 vice/src/diskimage/.deps
 vice/src/diskimage/Makefile
 vice/src/diskimage/Makefile.in
@@ -388,6 +390,7 @@ vice/src/fsdevice/.deps
 vice/src/fsdevice/Makefile
 vice/src/fsdevice/Makefile.in
 vice/src/fsdevice/libfsdevice.a
+vice/src/gentranslate_h.sh
 vice/src/gfxoutputdrv/.deps
 vice/src/gfxoutputdrv/Makefile
 vice/src/gfxoutputdrv/Makefile.in
