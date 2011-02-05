@@ -92,6 +92,7 @@ vice/doc/html/Makefile
 vice/doc/html/Makefile.in
 vice/doc/html/vice_*.html
 vice/doc/texinfo.tex
+vice/doc/vice.GID
 vice/doc/vice.html
 vice/doc/vice.info
 vice/doc/vice.opts.tmp
