@@ -86,6 +86,7 @@ vice/data/xvic.pdb
 vice/depcomp
 vice/doc/Makefile
 vice/doc/Makefile.in
+vice/doc/VICE.ph
 vice/doc/checkdoc
 vice/doc/checkdoc.mak
 vice/doc/html/Makefile
