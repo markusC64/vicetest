@@ -410,6 +410,7 @@ vice/src/imagecontents/.deps
 vice/src/imagecontents/Makefile
 vice/src/imagecontents/Makefile.in
 vice/src/imagecontents/libimagecontents.a
+vice/src/infocontrib.h
 vice/src/lib/Makefile
 vice/src/lib/Makefile.in
 vice/src/monitor/.deps
