@@ -16,7 +16,9 @@ vice/config.status
 vice/config.status.lineno
 vice/configure
 vice/data/*.exp
+vice/data/*.ilk
 vice/data/*.lib
+vice/data/*.pdb
 vice/data/C128/Makefile
 vice/data/C128/Makefile.in
 vice/data/C64/Makefile
@@ -45,6 +47,7 @@ vice/data/cartconv.ilk
 vice/data/cartconv.pdb
 vice/data/fonts/Makefile
 vice/data/fonts/Makefile.in
+vice/data/geninfocontrib.exe
 vice/data/genmsvcver.exe
 vice/data/genmsvcver.ilk
 vice/data/genmsvcver.pdb
