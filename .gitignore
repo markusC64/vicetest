@@ -284,6 +284,8 @@ vice/src/arch/win32/Debug
 vice/src/arch/win32/Makefile
 vice/src/arch/win32/Makefile.in
 vice/src/arch/win32/Release
+vice/src/arch/win32/geninfocontrib.exe
+vice/src/arch/win32/geninfocontrib.obj
 vice/src/arch/win32/libarch.a
 vice/src/arch/win32/libs
 vice/src/arch/win32/menuid.h
