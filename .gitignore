@@ -119,6 +119,7 @@ vice/po/gen_win32_rc
 vice/po/gen_win32_rc.exe
 vice/po/intl2po
 vice/po/intl2po.exe
+vice/po/nl_iso.po
 vice/po/po2table
 vice/po/po2table.exe
 vice/po/po_table.h
