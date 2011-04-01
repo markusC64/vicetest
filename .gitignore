@@ -295,6 +295,7 @@ vice/src/arch/win32/menuid.h
 vice/src/arch/win32/msvc/msvc_ver.h
 vice/src/arch/win32/res*cat.rc
 vice/src/arch/win32/res.h
+vice/src/arch/win32/stringid.h
 vice/src/arch/win32/utils/.deps
 vice/src/arch/win32/utils/Makefile
 vice/src/arch/win32/utils/Makefile.in
