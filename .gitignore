@@ -570,6 +570,9 @@ vice/src/translate.c.po.c
 vice/src/translate.h
 vice/src/translate_table.h
 vice/src/translate_text.c.po.c
+vice/src/userport/.deps
+vice/src/userport/Makefile
+vice/src/userport/Makefile.in
 vice/src/vdc/.deps
 vice/src/vdc/Makefile
 vice/src/vdc/Makefile.in
