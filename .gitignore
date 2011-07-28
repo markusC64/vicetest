@@ -601,6 +601,7 @@ vice/src/video/.deps
 vice/src/video/Makefile
 vice/src/video/Makefile.in
 vice/src/video/libvideo.a
+vice/src/vsid
 vice/src/x128
 vice/src/x128,ff8
 vice/src/x128.exe
