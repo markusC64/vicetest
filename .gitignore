@@ -615,6 +615,7 @@ vice/src/x64sc.exe
 vice/src/xcbm2
 vice/src/xcbm2,ff8
 vice/src/xcbm2.exe
+vice/src/xcbm5x0
 vice/src/xpet
 vice/src/xpet,ff8
 vice/src/xpet.exe
