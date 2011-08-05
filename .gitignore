@@ -5,6 +5,7 @@ vice/.autoheader.out
 vice/.automake.out
 vice/Makefile
 vice/Makefile.in
+vice/WinVICE-*
 vice/aclocal.m4
 vice/autom4te.cache
 vice/build/Makefile
@@ -603,6 +604,7 @@ vice/src/video/Makefile
 vice/src/video/Makefile.in
 vice/src/video/libvideo.a
 vice/src/vsid
+vice/src/vsid.exe
 vice/src/x128
 vice/src/x128,ff8
 vice/src/x128.exe
@@ -617,6 +619,7 @@ vice/src/xcbm2
 vice/src/xcbm2,ff8
 vice/src/xcbm2.exe
 vice/src/xcbm5x0
+vice/src/xcbm5x0.exe
 vice/src/xpet
 vice/src/xpet,ff8
 vice/src/xpet.exe
