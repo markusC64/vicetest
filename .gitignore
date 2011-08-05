@@ -93,6 +93,7 @@ vice/doc/VICE.ph
 vice/doc/checkdoc
 vice/doc/checkdoc.exe
 vice/doc/checkdoc.mak
+vice/doc/doxy
 vice/doc/html/Makefile
 vice/doc/html/Makefile.in
 vice/doc/html/vice_*.html
