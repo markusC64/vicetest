@@ -63,6 +63,7 @@ vice/data/petcat.ilk
 vice/data/petcat.pdb
 vice/data/vice.ini
 vice/data/vice.log
+vice/data/vsid.exe
 vice/data/x128.exe
 vice/data/x128.ilk
 vice/data/x128.pdb
@@ -78,6 +79,7 @@ vice/data/x64sc.pdb
 vice/data/xcbm2.exe
 vice/data/xcbm2.ilk
 vice/data/xcbm2.pdb
+vice/data/xcbm5x0.exe
 vice/data/xpet.exe
 vice/data/xpet.ilk
 vice/data/xpet.pdb
