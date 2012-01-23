@@ -288,10 +288,12 @@ vice/src/arch/win32/*.plg
 vice/src/arch/win32/*.rc.po.c
 vice/src/arch/win32/*.res
 vice/src/arch/win32/.deps
+vice/src/arch/win32/DXDebug
 vice/src/arch/win32/Debug
 vice/src/arch/win32/Makefile
 vice/src/arch/win32/Makefile.in
 vice/src/arch/win32/Release
+vice/src/arch/win32/WinVICE*
 vice/src/arch/win32/geninfocontrib.exe
 vice/src/arch/win32/geninfocontrib.obj
 vice/src/arch/win32/libarch.a
