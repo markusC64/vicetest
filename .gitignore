@@ -339,10 +339,10 @@ vice/src/c1541.exe
 vice/src/c64/.deps
 vice/src/c64/Makefile
 vice/src/c64/Makefile.in
+vice/src/c64/cart/*.a
 vice/src/c64/cart/.deps
 vice/src/c64/cart/Makefile
 vice/src/c64/cart/Makefile.in
-vice/src/c64/cart/libc64cart.a
 vice/src/c64/libc64.a
 vice/src/c64/libc64c128.a
 vice/src/c64/libc64c64dtv.a
