@@ -5,6 +5,7 @@ vice/.autoheader.out
 vice/.automake.out
 vice/Makefile
 vice/Makefile.in
+vice/VICE-*
 vice/WinVICE-*
 vice/aclocal.m4
 vice/autom4te.cache
@@ -136,11 +137,14 @@ vice/src/Makefile
 vice/src/Makefile.in
 vice/src/arch/Makefile
 vice/src/arch/Makefile.in
+vice/src/arch/amigaos/*.exe
 vice/src/arch/amigaos/.deps
 vice/src/arch/amigaos/Makefile
 vice/src/arch/amigaos/Makefile.in
 vice/src/arch/amigaos/genintl_h.sh
 vice/src/arch/amigaos/intl.c.po.c
+vice/src/arch/amigaos/intl.h
+vice/src/arch/amigaos/intl_table.h
 vice/src/arch/amigaos/intl_text.c.po.c
 vice/src/arch/amigaos/libarch.a
 vice/src/arch/beos/.deps
