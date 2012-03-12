@@ -182,10 +182,6 @@ vice/src/arch/os2/watcom/*.obj
 vice/src/arch/os2/watcom/*.res
 vice/src/arch/os2/watcom/*.sym
 vice/src/arch/os2/watcom/Vice2-*
-vice/src/arch/riscos/.deps
-vice/src/arch/riscos/Makefile
-vice/src/arch/riscos/Makefile.in
-vice/src/arch/riscos/libarch.a
 vice/src/arch/sdl/.deps
 vice/src/arch/sdl/Makefile
 vice/src/arch/sdl/Makefile.in
