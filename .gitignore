@@ -426,6 +426,9 @@ vice/src/imagecontents/libimagecontents.a
 vice/src/infocontrib.h
 vice/src/lib/Makefile
 vice/src/lib/Makefile.in
+vice/src/lib/p64/.deps
+vice/src/lib/p64/Makefile
+vice/src/lib/p64/Makefile.in
 vice/src/monitor/.deps
 vice/src/monitor/Makefile
 vice/src/monitor/Makefile.in
