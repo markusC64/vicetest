@@ -62,6 +62,7 @@ vice/doc/vice.html
 vice/doc/vice.info
 vice/doc/vice.opts.tmp
 vice/doc/vice.pdf
+vice/doc/vice.rc.tmp
 vice/doc/vice.txt
 vice/man/Makefile
 vice/man/Makefile.in
