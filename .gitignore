@@ -64,6 +64,7 @@ vice/doc/vice.opts.tmp
 vice/doc/vice.pdf
 vice/doc/vice.rc.tmp
 vice/doc/vice.txt
+vice/dosvice
 vice/man/Makefile
 vice/man/Makefile.in
 vice/missing
