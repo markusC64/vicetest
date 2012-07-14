@@ -286,6 +286,7 @@ vice/src/arch/win32/*.RES
 vice/src/arch/win32/*.plg
 vice/src/arch/win32/*.rc.po.c
 vice/src/arch/win32/*.res
+vice/src/arch/win32/*.res.*
 vice/src/arch/win32/.deps
 vice/src/arch/win32/DXDebug
 vice/src/arch/win32/Debug
