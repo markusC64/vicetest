@@ -5,6 +5,7 @@ vice/.autoheader.out
 vice/.automake.out
 vice/Makefile
 vice/Makefile.in
+vice/SDLVICE-*
 vice/VICE-*
 vice/WinVICE-*
 vice/aclocal.m4
