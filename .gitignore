@@ -106,6 +106,15 @@ vice/src/arch/amigaos/intl.h
 vice/src/arch/amigaos/intl_table.h
 vice/src/arch/amigaos/intl_text.c.po.c
 vice/src/arch/amigaos/libarch.a
+vice/src/arch/amigaos/x128ns
+vice/src/arch/amigaos/x64dtvns
+vice/src/arch/amigaos/x64ns
+vice/src/arch/amigaos/x64scns
+vice/src/arch/amigaos/xcbm2ns
+vice/src/arch/amigaos/xcbm5x0ns
+vice/src/arch/amigaos/xpetns
+vice/src/arch/amigaos/xplus4ns
+vice/src/arch/amigaos/xvicns
 vice/src/arch/beos/.deps
 vice/src/arch/beos/Makefile
 vice/src/arch/beos/Makefile.in
