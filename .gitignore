@@ -458,6 +458,9 @@ vice/src/pet/libpet.a
 vice/src/petcat
 vice/src/petcat,ff8
 vice/src/petcat.exe
+vice/src/platform/.deps
+vice/src/platform/Makefile
+vice/src/platform/Makefile.in
 vice/src/plus4/.deps
 vice/src/plus4/Makefile
 vice/src/plus4/Makefile.in
