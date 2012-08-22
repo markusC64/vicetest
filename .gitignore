@@ -337,6 +337,7 @@ vice/src/arch/win64/*.user
 vice/src/arch/win64/Itanium
 vice/src/arch/win64/Makefile
 vice/src/arch/win64/Makefile.in
+vice/src/arch/win64/Release[!!-~]no[!!-~]DirectX
 vice/src/arch/win64/libs
 vice/src/arch/win64/win64_id.bat
 vice/src/arch/win64/x64
