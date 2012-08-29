@@ -299,6 +299,7 @@ vice/src/arch/win32/*.res
 vice/src/arch/win32/*.res.*
 vice/src/arch/win32/.deps
 vice/src/arch/win32/DXDebug
+vice/src/arch/win32/DXRelease
 vice/src/arch/win32/Debug
 vice/src/arch/win32/Makefile
 vice/src/arch/win32/Makefile.in
