@@ -53,12 +53,16 @@ vice/depcomp
 vice/doc/Makefile
 vice/doc/Makefile.in
 vice/doc/VICE.ph
+vice/doc/building/Makefile
+vice/doc/building/Makefile.in
 vice/doc/checkdoc
 vice/doc/checkdoc.exe
 vice/doc/doxy
 vice/doc/html/Makefile
 vice/doc/html/Makefile.in
 vice/doc/html/vice_*.html
+vice/doc/readmes/Makefile
+vice/doc/readmes/Makefile.in
 vice/doc/texinfo.tex
 vice/doc/vice.GID
 vice/doc/vice.html
