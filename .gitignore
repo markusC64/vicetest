@@ -301,8 +301,6 @@ vice/src/arch/sdl/win64-msvc/x64
 vice/src/arch/sdl/winmips-msvc/Makefile
 vice/src/arch/sdl/winmips-msvc/Makefile.in
 vice/src/arch/sdl/winmips-msvc/SDLVICE*
-vice/src/arch/sdl/xbox/Makefile
-vice/src/arch/sdl/xbox/Makefile.in
 vice/src/arch/unix/.deps
 vice/src/arch/unix/Makefile
 vice/src/arch/unix/Makefile.in
