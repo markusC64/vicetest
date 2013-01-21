@@ -14,6 +14,8 @@ vice/build/Makefile
 vice/build/Makefile.in
 vice/build/amigaos/Makefile
 vice/build/amigaos/Makefile.in
+vice/build/android/Makefile
+vice/build/android/Makefile.in
 vice/build/beos/Makefile
 vice/build/beos/Makefile.in
 vice/build/macosx/Makefile
@@ -148,6 +150,10 @@ vice/src/arch/amigaos/xcbm5x0ns
 vice/src/arch/amigaos/xpetns
 vice/src/arch/amigaos/xplus4ns
 vice/src/arch/amigaos/xvicns
+vice/src/arch/android/AnVICE/bin
+vice/src/arch/android/AnVICE/gen
+vice/src/arch/android/AnVICE/libs
+vice/src/arch/android/AnVICE/obj
 vice/src/arch/beos/.deps
 vice/src/arch/beos/Makefile
 vice/src/arch/beos/Makefile.in
