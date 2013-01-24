@@ -1,3 +1,4 @@
+vice/*.apk
 vice/*.gz
 vice/.aclocal.out
 vice/.autoconf.out
@@ -154,6 +155,7 @@ vice/src/arch/android/AnVICE/.settings/Makefile
 vice/src/arch/android/AnVICE/.settings/Makefile.in
 vice/src/arch/android/AnVICE/Makefile
 vice/src/arch/android/AnVICE/Makefile.in
+vice/src/arch/android/AnVICE/ant.properties
 vice/src/arch/android/AnVICE/assets/Makefile
 vice/src/arch/android/AnVICE/assets/Makefile.in
 vice/src/arch/android/AnVICE/bin
@@ -816,4 +818,6 @@ vice/src/xscpu64.exe
 vice/src/xvic
 vice/src/xvic.exe
 vice/vice*.spec
+vice/vice-dev.keystore
+vice/vice-release.keystore
 vice/ylwrap
