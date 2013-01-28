@@ -170,6 +170,8 @@ vice/src/arch/android/AnVICE/jni/sdl/Makefile
 vice/src/arch/android/AnVICE/jni/sdl/Makefile.in
 vice/src/arch/android/AnVICE/jni/vice_common/Makefile
 vice/src/arch/android/AnVICE/jni/vice_common/Makefile.in
+vice/src/arch/android/AnVICE/jni/vice_commonall/Makefile
+vice/src/arch/android/AnVICE/jni/vice_commonall/Makefile.in
 vice/src/arch/android/AnVICE/jni/vice_driver/Makefile
 vice/src/arch/android/AnVICE/jni/vice_driver/Makefile.in
 vice/src/arch/android/AnVICE/jni/vice_main/Makefile
