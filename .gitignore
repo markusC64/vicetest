@@ -194,6 +194,8 @@ vice/src/arch/android/AnVICE/jni/vice_viciisc/Makefile
 vice/src/arch/android/AnVICE/jni/vice_viciisc/Makefile.in
 vice/src/arch/android/AnVICE/jni/vice_x64/Makefile
 vice/src/arch/android/AnVICE/jni/vice_x64/Makefile.in
+vice/src/arch/android/AnVICE/jni/vice_xvic/Makefile
+vice/src/arch/android/AnVICE/jni/vice_xvic/Makefile.in
 vice/src/arch/android/AnVICE/libs
 vice/src/arch/android/AnVICE/obj
 vice/src/arch/android/AnVICE/res/Makefile
