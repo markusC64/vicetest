@@ -178,10 +178,10 @@ vice/src/arch/android/AnVICE/jni/vice_commonall/Makefile
 vice/src/arch/android/AnVICE/jni/vice_commonall/Makefile.in
 vice/src/arch/android/AnVICE/jni/vice_crtc/Makefile
 vice/src/arch/android/AnVICE/jni/vice_crtc/Makefile.in
-vice/src/arch/android/AnVICE/jni/vice_driver/Makefile
-vice/src/arch/android/AnVICE/jni/vice_driver/Makefile.in
 vice/src/arch/android/AnVICE/jni/vice_main/Makefile
 vice/src/arch/android/AnVICE/jni/vice_main/Makefile.in
+vice/src/arch/android/AnVICE/jni/vice_tape/Makefile
+vice/src/arch/android/AnVICE/jni/vice_tape/Makefile.in
 vice/src/arch/android/AnVICE/jni/vice_vicii/Makefile
 vice/src/arch/android/AnVICE/jni/vice_vicii/Makefile.in
 vice/src/arch/android/AnVICE/jni/vice_viciisc/Makefile
