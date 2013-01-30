@@ -194,8 +194,12 @@ vice/src/arch/android/AnVICE/jni/vice_viciisc/Makefile
 vice/src/arch/android/AnVICE/jni/vice_viciisc/Makefile.in
 vice/src/arch/android/AnVICE/jni/vice_vsid/Makefile
 vice/src/arch/android/AnVICE/jni/vice_vsid/Makefile.in
+vice/src/arch/android/AnVICE/jni/vice_x128/Makefile
+vice/src/arch/android/AnVICE/jni/vice_x128/Makefile.in
 vice/src/arch/android/AnVICE/jni/vice_x64/Makefile
 vice/src/arch/android/AnVICE/jni/vice_x64/Makefile.in
+vice/src/arch/android/AnVICE/jni/vice_x64dtv/Makefile
+vice/src/arch/android/AnVICE/jni/vice_x64dtv/Makefile.in
 vice/src/arch/android/AnVICE/jni/vice_x64sc/Makefile
 vice/src/arch/android/AnVICE/jni/vice_x64sc/Makefile.in
 vice/src/arch/android/AnVICE/jni/vice_xcbm2/Makefile
