@@ -252,6 +252,7 @@ vice/src/arch/android/AnVICE/src/com/locnet/Makefile.in
 vice/src/arch/android/AnVICE/src/com/locnet/vice/DosBoxLauncher.java
 vice/src/arch/android/AnVICE/src/com/locnet/vice/Makefile
 vice/src/arch/android/AnVICE/src/com/locnet/vice/Makefile.in
+vice/src/arch/android/AnVICE/src/com/locnet/vice/PreConfig.java
 vice/src/arch/android/AnVICE/src/org/Makefile
 vice/src/arch/android/AnVICE/src/org/Makefile.in
 vice/src/arch/android/AnVICE/src/org/ab/Makefile
