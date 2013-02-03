@@ -227,6 +227,7 @@ vice/src/arch/android/AnVICE/jni/vice_xpet/Makefile
 vice/src/arch/android/AnVICE/jni/vice_xpet/Makefile.in
 vice/src/arch/android/AnVICE/jni/vice_xplus4/Makefile
 vice/src/arch/android/AnVICE/jni/vice_xplus4/Makefile.in
+vice/src/arch/android/AnVICE/jni/vice_xscpu64/Android.mk
 vice/src/arch/android/AnVICE/jni/vice_xscpu64/Makefile
 vice/src/arch/android/AnVICE/jni/vice_xscpu64/Makefile.in
 vice/src/arch/android/AnVICE/jni/vice_xvic/Makefile
