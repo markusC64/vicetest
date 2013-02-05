@@ -207,8 +207,6 @@ vice/src/arch/android/AnVICE/jni/vice_vicii/Makefile.in
 vice/src/arch/android/AnVICE/jni/vice_viciisc/Android.mk
 vice/src/arch/android/AnVICE/jni/vice_viciisc/Makefile
 vice/src/arch/android/AnVICE/jni/vice_viciisc/Makefile.in
-vice/src/arch/android/AnVICE/jni/vice_vsid/Makefile
-vice/src/arch/android/AnVICE/jni/vice_vsid/Makefile.in
 vice/src/arch/android/AnVICE/jni/vice_x128/Makefile
 vice/src/arch/android/AnVICE/jni/vice_x128/Makefile.in
 vice/src/arch/android/AnVICE/jni/vice_x64/Android.mk
