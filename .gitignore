@@ -250,6 +250,14 @@ vice/src/arch/android/AnVICE/res/values/Makefile
 vice/src/arch/android/AnVICE/res/values/Makefile.in
 vice/src/arch/android/AnVICE/res/values/string.xml
 vice/src/arch/android/AnVICE/res/values/strings.xml
+vice/src/arch/android/AnVICE/src-proto/Makefile
+vice/src/arch/android/AnVICE/src-proto/Makefile.in
+vice/src/arch/android/AnVICE/src-proto/com/Makefile
+vice/src/arch/android/AnVICE/src-proto/com/Makefile.in
+vice/src/arch/android/AnVICE/src-proto/com/locnet/Makefile
+vice/src/arch/android/AnVICE/src-proto/com/locnet/Makefile.in
+vice/src/arch/android/AnVICE/src-proto/com/locnet/vice/Makefile
+vice/src/arch/android/AnVICE/src-proto/com/locnet/vice/Makefile.in
 vice/src/arch/android/AnVICE/src/com/locnet/vice/DosBoxLauncher.java
 vice/src/arch/android/AnVICE/src/com/locnet/vice/PreConfig.java
 vice/src/arch/android/AnVICE/vice-dev.keystore
