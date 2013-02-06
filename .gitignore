@@ -41,6 +41,8 @@ vice/config.log
 vice/config.status
 vice/config.status.lineno
 vice/configure
+vice/configure.ac
+vice/configure.in
 vice/data/*.exe
 vice/data/*.exp
 vice/data/*.ilk
@@ -156,6 +158,7 @@ vice/src/arch/android/AnVICE/.settings/Makefile.in
 vice/src/arch/android/AnVICE/Makefile
 vice/src/arch/android/AnVICE/Makefile.in
 vice/src/arch/android/AnVICE/ant.properties
+vice/src/arch/android/AnVICE/assets-proto/Makefile.in
 vice/src/arch/android/AnVICE/assets/sdl-vicerc
 vice/src/arch/android/AnVICE/bin
 vice/src/arch/android/AnVICE/gen
