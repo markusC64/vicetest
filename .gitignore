@@ -224,6 +224,7 @@ vice/src/arch/android/AnVICE/jni/vice_xcbm2/Makefile
 vice/src/arch/android/AnVICE/jni/vice_xcbm2/Makefile.in
 vice/src/arch/android/AnVICE/jni/vice_xcbm5x0/Makefile
 vice/src/arch/android/AnVICE/jni/vice_xcbm5x0/Makefile.in
+vice/src/arch/android/AnVICE/jni/vice_xpet/Android.mk
 vice/src/arch/android/AnVICE/jni/vice_xpet/Makefile
 vice/src/arch/android/AnVICE/jni/vice_xpet/Makefile.in
 vice/src/arch/android/AnVICE/jni/vice_xplus4/Makefile
@@ -235,6 +236,10 @@ vice/src/arch/android/AnVICE/jni/vice_xvic/Makefile
 vice/src/arch/android/AnVICE/jni/vice_xvic/Makefile.in
 vice/src/arch/android/AnVICE/libs
 vice/src/arch/android/AnVICE/obj
+vice/src/arch/android/AnVICE/res-proto/Makefile
+vice/src/arch/android/AnVICE/res-proto/Makefile.in
+vice/src/arch/android/AnVICE/res-proto/values/Makefile
+vice/src/arch/android/AnVICE/res-proto/values/Makefile.in
 vice/src/arch/android/AnVICE/res/Makefile
 vice/src/arch/android/AnVICE/res/Makefile.in
 vice/src/arch/android/AnVICE/res/drawable/Makefile
