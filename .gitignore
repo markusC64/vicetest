@@ -156,8 +156,6 @@ vice/src/arch/android/AnVICE/.settings/Makefile.in
 vice/src/arch/android/AnVICE/Makefile
 vice/src/arch/android/AnVICE/Makefile.in
 vice/src/arch/android/AnVICE/ant.properties
-vice/src/arch/android/AnVICE/assets/Makefile
-vice/src/arch/android/AnVICE/assets/Makefile.in
 vice/src/arch/android/AnVICE/assets/sdl-vicerc
 vice/src/arch/android/AnVICE/bin
 vice/src/arch/android/AnVICE/gen
