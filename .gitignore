@@ -158,6 +158,7 @@ vice/src/arch/android/AnVICE/.settings/Makefile.in
 vice/src/arch/android/AnVICE/Makefile
 vice/src/arch/android/AnVICE/Makefile.in
 vice/src/arch/android/AnVICE/ant.properties
+vice/src/arch/android/AnVICE/assets-proto/Makefile
 vice/src/arch/android/AnVICE/assets-proto/Makefile.in
 vice/src/arch/android/AnVICE/assets/c128_basic64
 vice/src/arch/android/AnVICE/assets/c128_basichi
@@ -329,6 +330,8 @@ vice/src/arch/android/AnVICE/libs
 vice/src/arch/android/AnVICE/obj
 vice/src/arch/android/AnVICE/res-proto/Makefile
 vice/src/arch/android/AnVICE/res-proto/Makefile.in
+vice/src/arch/android/AnVICE/res-proto/layout/Makefile
+vice/src/arch/android/AnVICE/res-proto/layout/Makefile.in
 vice/src/arch/android/AnVICE/res-proto/values/Makefile
 vice/src/arch/android/AnVICE/res-proto/values/Makefile.in
 vice/src/arch/android/AnVICE/res/Makefile
