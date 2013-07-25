@@ -469,6 +469,8 @@ vice/src/arch/sdl/Makefile.in
 vice/src/arch/sdl/dingoo-files/Makefile
 vice/src/arch/sdl/dingoo-files/Makefile.in
 vice/src/arch/sdl/libarch.a
+vice/src/arch/sdl/msvc-files/Makefile
+vice/src/arch/sdl/msvc-files/Makefile.in
 vice/src/arch/sdl/qnx4/Makefile
 vice/src/arch/sdl/qnx4/Makefile.in
 vice/src/arch/sdl/syllable-files/Makefile
@@ -618,6 +620,8 @@ vice/src/arch/win32/vs71
 vice/src/arch/win32/vs8
 vice/src/arch/win32/vs9
 vice/src/arch/win32/vs_tmpl/Debug
+vice/src/arch/win32/vs_tmpl/Makefile
+vice/src/arch/win32/vs_tmpl/Makefile.in
 vice/src/arch/win32/vs_tmpl/Release
 vice/src/arch/win32/vs_tmpl/mkmsvc.ncb
 vice/src/arch/win32/vs_tmpl/mkmsvc.opt
