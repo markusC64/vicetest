@@ -855,6 +855,7 @@ vice/src/sounddrv/Makefile
 vice/src/sounddrv/Makefile.in
 vice/src/sounddrv/libsounddrv.a
 vice/src/stamp-h1
+vice/src/svnversion.h
 vice/src/svnversion_dummy.h
 vice/src/tape/.deps
 vice/src/tape/Makefile
