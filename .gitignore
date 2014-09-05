@@ -646,6 +646,7 @@ vice/src/c64/cart/Makefile.in
 vice/src/c64/libc64.a
 vice/src/c64/libc64c128.a
 vice/src/c64/libc64c64dtv.a
+vice/src/c64/psiddrv.o65
 vice/src/c64dtv/.deps
 vice/src/c64dtv/Makefile
 vice/src/c64dtv/Makefile.in
