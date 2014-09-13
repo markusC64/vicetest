@@ -4,6 +4,8 @@ vice/.aclocal.out
 vice/.autoconf.out
 vice/.autoheader.out
 vice/.automake.out
+vice/.contributors
+vice/.svnlog
 vice/Makefile
 vice/Makefile.in
 vice/SDLVICE-*
