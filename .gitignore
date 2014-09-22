@@ -6,6 +6,7 @@ vice/.autoheader.out
 vice/.automake.out
 vice/.contributors
 vice/.svnlog
+vice/BeVICE-*
 vice/Makefile
 vice/Makefile.in
 vice/SDLVICE-*
@@ -39,6 +40,7 @@ vice/build/qnx4/Makefile
 vice/build/qnx4/Makefile.in
 vice/build/rhapsody/Makefile
 vice/build/rhapsody/Makefile.in
+vice/confdefs.h
 vice/config.log
 vice/config.status
 vice/config.status.lineno
@@ -648,6 +650,9 @@ vice/src/c64/cart/Makefile.in
 vice/src/c64/libc64.a
 vice/src/c64/libc64c128.a
 vice/src/c64/libc64c64dtv.a
+vice/src/c64/libc64sc.a
+vice/src/c64/libc64scpu64.a
+vice/src/c64/libvsid.a
 vice/src/c64/psiddrv.o65
 vice/src/c64dtv/.deps
 vice/src/c64dtv/Makefile
@@ -660,6 +665,7 @@ vice/src/cbm2/.deps
 vice/src/cbm2/Makefile
 vice/src/cbm2/Makefile.in
 vice/src/cbm2/libcbm2.a
+vice/src/cbm2/libcbm5x0.a
 vice/src/config.h
 vice/src/config.h.in
 vice/src/core/.deps
@@ -746,6 +752,7 @@ vice/src/lib/libffmpeg/libswscale/Makefile.in
 vice/src/lib/p64/.deps
 vice/src/lib/p64/Makefile
 vice/src/lib/p64/Makefile.in
+vice/src/lib/p64/libp64.a
 vice/src/monitor/.deps
 vice/src/monitor/Makefile
 vice/src/monitor/Makefile.in
@@ -763,6 +770,7 @@ vice/src/petcat.exe
 vice/src/platform/.deps
 vice/src/platform/Makefile
 vice/src/platform/Makefile.in
+vice/src/platform/libplatform.a
 vice/src/plus4/.deps
 vice/src/plus4/Makefile
 vice/src/plus4/Makefile.in
@@ -841,10 +849,11 @@ vice/src/rs232drv/librs232drv.a
 vice/src/rtc/.deps
 vice/src/rtc/Makefile
 vice/src/rtc/Makefile.in
-vice/src/rtc/libcrtc.a
+vice/src/rtc/librtc.a
 vice/src/scpu64/.deps
 vice/src/scpu64/Makefile
 vice/src/scpu64/Makefile.in
+vice/src/scpu64/libscpu64.a
 vice/src/serial/.deps
 vice/src/serial/Makefile
 vice/src/serial/Makefile.in
@@ -872,6 +881,7 @@ vice/src/translate_text.c.po.c
 vice/src/userport/.deps
 vice/src/userport/Makefile
 vice/src/userport/Makefile.in
+vice/src/userport/libuserport.a
 vice/src/vdc/.deps
 vice/src/vdc/Makefile
 vice/src/vdc/Makefile.in
@@ -886,6 +896,8 @@ vice/src/vic20/Makefile.in
 vice/src/vic20/cart/.deps
 vice/src/vic20/cart/Makefile
 vice/src/vic20/cart/Makefile.in
+vice/src/vic20/cart/libmascuerade.a
+vice/src/vic20/cart/libvic20cart.a
 vice/src/vic20/libvic20.a
 vice/src/vicii/.deps
 vice/src/vicii/Makefile
@@ -895,7 +907,7 @@ vice/src/vicii/libviciidtv.a
 vice/src/viciisc/.deps
 vice/src/viciisc/Makefile
 vice/src/viciisc/Makefile.in
-vice/src/viciisc/libviciinew.a
+vice/src/viciisc/libviciisc.a
 vice/src/video/.deps
 vice/src/video/Makefile
 vice/src/video/Makefile.in
