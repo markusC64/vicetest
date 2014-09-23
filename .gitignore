@@ -40,6 +40,7 @@ vice/build/qnx4/Makefile
 vice/build/qnx4/Makefile.in
 vice/build/rhapsody/Makefile
 vice/build/rhapsody/Makefile.in
+vice/conf*-*
 vice/confdefs.h
 vice/config.log
 vice/config.status
