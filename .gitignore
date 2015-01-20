@@ -723,6 +723,8 @@ vice/src/fsdevice/.deps
 vice/src/fsdevice/Makefile
 vice/src/fsdevice/Makefile.in
 vice/src/fsdevice/libfsdevice.a
+vice/src/geninfocontrib
+vice/src/geninfocontrib.exe
 vice/src/gentranslate
 vice/src/gentranslate.exe
 vice/src/gentranslate_h.sh
