@@ -127,6 +127,12 @@ vice/po/po_table.h
 vice/po/stamp-cat-id
 vice/po/sv_iso.po
 vice/po/vice.pot
+vice/src/*_vpl.h
+vice/src/*basic*.h
+vice/src/*char*.h
+vice/src/*edit*.h
+vice/src/*kernal*.h
+vice/src/*waterloo*.h
 vice/src/.deps
 vice/src/Makefile
 vice/src/Makefile.in
@@ -639,6 +645,8 @@ vice/src/arch/win32/watcom/*.sym
 vice/src/arch/win32/watcom/Makefile
 vice/src/arch/win32/watcom/Makefile.in
 vice/src/arch/win32/watcom/WinVICE*
+vice/src/bin2c
+vice/src/bin2c.exe
 vice/src/c128/.deps
 vice/src/c128/Makefile
 vice/src/c128/Makefile.in
@@ -718,6 +726,7 @@ vice/src/drive/tcbm/.deps
 vice/src/drive/tcbm/Makefile
 vice/src/drive/tcbm/Makefile.in
 vice/src/drive/tcbm/libdrivetcbm.a
+vice/src/drived*.h
 vice/src/fileio/.deps
 vice/src/fileio/Makefile
 vice/src/fileio/Makefile.in
@@ -766,6 +775,7 @@ vice/src/monitor/.deps
 vice/src/monitor/Makefile
 vice/src/monitor/Makefile.in
 vice/src/monitor/libmonitor.a
+vice/src/palette2c
 vice/src/parallel/.deps
 vice/src/parallel/Makefile
 vice/src/parallel/Makefile.in
@@ -784,10 +794,13 @@ vice/src/plus4/.deps
 vice/src/plus4/Makefile
 vice/src/plus4/Makefile.in
 vice/src/plus4/libplus4.a
+vice/src/plus43plus1*.h
 vice/src/printerdrv/.deps
 vice/src/printerdrv/Makefile
 vice/src/printerdrv/Makefile.in
 vice/src/printerdrv/libprinterdrv.a
+vice/src/printermps803.h
+vice/src/printernl10cbm.h
 vice/src/raster/.deps
 vice/src/raster/Makefile
 vice/src/raster/Makefile.in
