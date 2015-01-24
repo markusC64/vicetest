@@ -896,6 +896,7 @@ vice/src/tape/.deps
 vice/src/tape/Makefile
 vice/src/tape/Makefile.in
 vice/src/tape/libtape.a
+vice/src/team.tmp
 vice/src/translate.c.po.c
 vice/src/translate.h
 vice/src/translate_table.h
