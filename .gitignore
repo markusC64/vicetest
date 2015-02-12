@@ -88,8 +88,10 @@ vice/doc/building/Makefile.in
 vice/doc/checkdoc
 vice/doc/checkdoc.exe
 vice/doc/doxy
+vice/doc/html/COPYING
 vice/doc/html/Makefile
 vice/doc/html/Makefile.in
+vice/doc/html/NEWS
 vice/doc/html/vice_*.html
 vice/doc/readmes/Makefile
 vice/doc/readmes/Makefile.in
