@@ -765,6 +765,7 @@ vice/src/lib/libffmpeg/.aclocal.out
 vice/src/lib/libffmpeg/.config
 vice/src/lib/libffmpeg/.version
 vice/src/lib/libffmpeg/bin
+vice/src/lib/libffmpeg/compat/msvcrt/snprintf.d
 vice/src/lib/libffmpeg/config.asm
 vice/src/lib/libffmpeg/config.fate
 vice/src/lib/libffmpeg/config.h
@@ -814,6 +815,7 @@ vice/src/lib/libffmpeg/libswscale/libswscale.pc
 vice/src/lib/libffmpeg/libswscale/libswscale.ver
 vice/src/lib/libffmpeg/libswscale/x86/*.d
 vice/src/lib/libffmpeg/share
+vice/src/lib/libffmpeg/tests
 vice/src/lib/liblame/.aclocal.out
 vice/src/lib/liblame/.autoconf.out
 vice/src/lib/liblame/.automake.out
