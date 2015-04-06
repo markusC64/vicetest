@@ -624,6 +624,7 @@ vice/src/arch/win32/vs11
 vice/src/arch/win32/vs12
 vice/src/arch/win32/vs6
 vice/src/arch/win32/vs70
+vice/src/arch/win32/vs70-ffmpeg
 vice/src/arch/win32/vs71
 vice/src/arch/win32/vs8
 vice/src/arch/win32/vs9
