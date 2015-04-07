@@ -495,6 +495,7 @@ vice/src/arch/sdl/win32-msvc10
 vice/src/arch/sdl/win32-msvc11
 vice/src/arch/sdl/win32-msvc6
 vice/src/arch/sdl/win32-msvc70
+vice/src/arch/sdl/win32-msvc70-ffmpeg
 vice/src/arch/sdl/win32-msvc71
 vice/src/arch/sdl/win32-msvc8
 vice/src/arch/sdl/win32-msvc9
