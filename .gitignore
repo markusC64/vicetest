@@ -499,6 +499,7 @@ vice/src/arch/sdl/win32-msvc70-ffmpeg
 vice/src/arch/sdl/win32-msvc71
 vice/src/arch/sdl/win32-msvc71-ffmpeg
 vice/src/arch/sdl/win32-msvc8
+vice/src/arch/sdl/win32-msvc8-ffmpeg
 vice/src/arch/sdl/win32-msvc9
 vice/src/arch/sdl/win32-watcom/*.err
 vice/src/arch/sdl/win32-watcom/*.exe
@@ -630,6 +631,7 @@ vice/src/arch/win32/vs70-ffmpeg
 vice/src/arch/win32/vs71
 vice/src/arch/win32/vs71-ffmpeg
 vice/src/arch/win32/vs8
+vice/src/arch/win32/vs8-ffmpeg
 vice/src/arch/win32/vs9
 vice/src/arch/win32/vs_tmpl/Debug
 vice/src/arch/win32/vs_tmpl/Makefile
