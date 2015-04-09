@@ -494,6 +494,7 @@ vice/src/arch/sdl/syllable-files/Makefile.in
 vice/src/arch/sdl/win32-msvc10
 vice/src/arch/sdl/win32-msvc10-ffmpeg
 vice/src/arch/sdl/win32-msvc11
+vice/src/arch/sdl/win32-msvc11-ffmpeg
 vice/src/arch/sdl/win32-msvc6
 vice/src/arch/sdl/win32-msvc70
 vice/src/arch/sdl/win32-msvc70-ffmpeg
@@ -627,6 +628,7 @@ vice/src/arch/win32/vice.opt
 vice/src/arch/win32/vs10
 vice/src/arch/win32/vs10-ffmpeg
 vice/src/arch/win32/vs11
+vice/src/arch/win32/vs11-ffmpeg
 vice/src/arch/win32/vs12
 vice/src/arch/win32/vs6
 vice/src/arch/win32/vs70
