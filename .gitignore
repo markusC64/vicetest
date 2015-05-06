@@ -790,6 +790,7 @@ vice/src/lib/libffmpeg/config.mak
 vice/src/lib/libffmpeg/doc/*.1
 vice/src/lib/libffmpeg/doc/*.3
 vice/src/lib/libffmpeg/doc/*.d
+vice/src/lib/libffmpeg/doc/*.html
 vice/src/lib/libffmpeg/doc/*.pod
 vice/src/lib/libffmpeg/doc/avoptions_codec.texi
 vice/src/lib/libffmpeg/doc/avoptions_format.texi
