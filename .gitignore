@@ -811,12 +811,14 @@ vice/src/lib/libffmpeg/libavdevice/*.d
 vice/src/lib/libffmpeg/libavdevice/*.def
 vice/src/lib/libffmpeg/libavdevice/*.dll
 vice/src/lib/libffmpeg/libavdevice/*.lib
+vice/src/lib/libffmpeg/libavdevice/lib*.a
 vice/src/lib/libffmpeg/libavdevice/libavdevice.pc
 vice/src/lib/libffmpeg/libavdevice/libavdevice.ver
 vice/src/lib/libffmpeg/libavfilter/*.d
 vice/src/lib/libffmpeg/libavfilter/*.def
 vice/src/lib/libffmpeg/libavfilter/*.dll
 vice/src/lib/libffmpeg/libavfilter/*.lib
+vice/src/lib/libffmpeg/libavfilter/lib*.a
 vice/src/lib/libffmpeg/libavfilter/libavfilter.pc
 vice/src/lib/libffmpeg/libavfilter/libavfilter.ver
 vice/src/lib/libffmpeg/libavfilter/libmpcodecs/*.d
@@ -1107,6 +1109,7 @@ vice/src/viciisc/libviciisc.a
 vice/src/viciivsid/.deps
 vice/src/viciivsid/Makefile
 vice/src/viciivsid/Makefile.in
+vice/src/viciivsid/lib*.a
 vice/src/video/.deps
 vice/src/video/Makefile
 vice/src/video/Makefile.in
