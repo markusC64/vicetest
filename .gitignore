@@ -897,6 +897,7 @@ vice/src/lib/liblame/include/Makefile
 vice/src/lib/liblame/include/Makefile.in
 vice/src/lib/liblame/lame.spec
 vice/src/lib/liblame/libmp3lame/.deps
+vice/src/lib/liblame/libmp3lame/.libs
 vice/src/lib/liblame/libmp3lame/Makefile
 vice/src/lib/liblame/libmp3lame/Makefile.in
 vice/src/lib/liblame/libmp3lame/i386/Makefile
@@ -918,6 +919,7 @@ vice/src/lib/liblame/misc/Makefile
 vice/src/lib/liblame/misc/Makefile.in
 vice/src/lib/liblame/missing
 vice/src/lib/liblame/mpglib/.deps
+vice/src/lib/liblame/mpglib/.libs
 vice/src/lib/liblame/mpglib/Makefile
 vice/src/lib/liblame/mpglib/Makefile.in
 vice/src/lib/liblame/stamp-h1
@@ -932,6 +934,7 @@ vice/src/lib/libx264/config.h
 vice/src/lib/libx264/config.log
 vice/src/lib/libx264/config.mak
 vice/src/lib/libx264/conftest*
+vice/src/lib/libx264/libx264.a
 vice/src/lib/libx264/x264
 vice/src/lib/libx264/x264.pc
 vice/src/lib/libx264/x264_config.h
