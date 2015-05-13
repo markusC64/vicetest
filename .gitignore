@@ -804,6 +804,7 @@ vice/src/lib/libffmpeg/libavcodec/*.d
 vice/src/lib/libffmpeg/libavcodec/*.def
 vice/src/lib/libffmpeg/libavcodec/*.dll
 vice/src/lib/libffmpeg/libavcodec/*.lib
+vice/src/lib/libffmpeg/libavcodec/lib*.a
 vice/src/lib/libffmpeg/libavcodec/libavcodec.pc
 vice/src/lib/libffmpeg/libavcodec/libavcodec.ver
 vice/src/lib/libffmpeg/libavcodec/x86/*.d
@@ -827,6 +828,7 @@ vice/src/lib/libffmpeg/libavformat/*.d
 vice/src/lib/libffmpeg/libavformat/*.def
 vice/src/lib/libffmpeg/libavformat/*.dll
 vice/src/lib/libffmpeg/libavformat/*.lib
+vice/src/lib/libffmpeg/libavformat/lib*.a
 vice/src/lib/libffmpeg/libavformat/libavformat.pc
 vice/src/lib/libffmpeg/libavformat/libavformat.ver
 vice/src/lib/libffmpeg/libavutil/*.d
@@ -841,12 +843,14 @@ vice/src/lib/libffmpeg/libpostproc/*.d
 vice/src/lib/libffmpeg/libpostproc/*.def
 vice/src/lib/libffmpeg/libpostproc/*.dll
 vice/src/lib/libffmpeg/libpostproc/*.lib
+vice/src/lib/libffmpeg/libpostproc/lib*.a
 vice/src/lib/libffmpeg/libpostproc/libpostproc.pc
 vice/src/lib/libffmpeg/libpostproc/libpostproc.ver
 vice/src/lib/libffmpeg/libswresample/*.d
 vice/src/lib/libffmpeg/libswresample/*.def
 vice/src/lib/libffmpeg/libswresample/*.dll
 vice/src/lib/libffmpeg/libswresample/*.lib
+vice/src/lib/libffmpeg/libswresample/lib*.a
 vice/src/lib/libffmpeg/libswresample/libswresample.pc
 vice/src/lib/libffmpeg/libswresample/libswresample.ver
 vice/src/lib/libffmpeg/libswresample/x86/*.d
@@ -854,6 +858,7 @@ vice/src/lib/libffmpeg/libswscale/*.d
 vice/src/lib/libffmpeg/libswscale/*.def
 vice/src/lib/libffmpeg/libswscale/*.dll
 vice/src/lib/libffmpeg/libswscale/*.lib
+vice/src/lib/libffmpeg/libswscale/lib*.a
 vice/src/lib/libffmpeg/libswscale/libswscale.pc
 vice/src/lib/libffmpeg/libswscale/libswscale.ver
 vice/src/lib/libffmpeg/libswscale/x86/*.d
