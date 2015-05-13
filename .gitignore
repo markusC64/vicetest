@@ -836,6 +836,7 @@ vice/src/lib/libffmpeg/libavutil/*.def
 vice/src/lib/libffmpeg/libavutil/*.dll
 vice/src/lib/libffmpeg/libavutil/*.lib
 vice/src/lib/libffmpeg/libavutil/ffversion.h
+vice/src/lib/libffmpeg/libavutil/lib*.a
 vice/src/lib/libffmpeg/libavutil/libavutil.pc
 vice/src/lib/libffmpeg/libavutil/libavutil.ver
 vice/src/lib/libffmpeg/libavutil/x86/*.d
