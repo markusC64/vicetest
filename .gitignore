@@ -377,6 +377,8 @@ vice/src/arch/android/Makefile.in
 vice/src/arch/beos/.deps
 vice/src/arch/beos/Makefile
 vice/src/arch/beos/Makefile.in
+vice/src/arch/beos/constants.h
+vice/src/arch/beos/genconstants
 vice/src/arch/beos/libarch.a
 vice/src/arch/msdos/.deps
 vice/src/arch/msdos/Makefile
