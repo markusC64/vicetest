@@ -1005,6 +1005,7 @@ vice/src/rtc/librtc.a
 vice/src/samplerdrv/.deps
 vice/src/samplerdrv/Makefile
 vice/src/samplerdrv/Makefile.in
+vice/src/samplerdrv/libsamplerdrv.a
 vice/src/scpu64/.deps
 vice/src/scpu64/Makefile
 vice/src/scpu64/Makefile.in
