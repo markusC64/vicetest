@@ -939,6 +939,8 @@ vice/src/resid-dtv/.aclocal.out
 vice/src/resid-dtv/.autoconf.out
 vice/src/resid-dtv/.automake.out
 vice/src/resid-dtv/.deps
+vice/src/resid-dtv/COPYING
+vice/src/resid-dtv/INSTALL
 vice/src/resid-dtv/Makefile
 vice/src/resid-dtv/Makefile.in
 vice/src/resid-dtv/aclocal.m4
@@ -969,6 +971,8 @@ vice/src/resid/.aclocal.out
 vice/src/resid/.autoconf.out
 vice/src/resid/.automake.out
 vice/src/resid/.deps
+vice/src/resid/COPYING
+vice/src/resid/INSTALL
 vice/src/resid/Makefile
 vice/src/resid/Makefile.in
 vice/src/resid/aclocal.m4
