@@ -9,6 +9,7 @@ vice/.svnlog
 vice/BeVICE-*
 vice/Makefile
 vice/Makefile.in
+vice/SDL2VICE-*
 vice/SDLVICE-*
 vice/VICE-*
 vice/WinVICE-*
