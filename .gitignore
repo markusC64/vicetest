@@ -676,6 +676,9 @@ vice/src/crtc/Makefile.in
 vice/src/crtc/libcrtc.a
 vice/src/debug.h
 vice/src/depcomp
+vice/src/diag/.deps
+vice/src/diag/Makefile
+vice/src/diag/Makefile.in
 vice/src/diskimage/.deps
 vice/src/diskimage/Makefile
 vice/src/diskimage/Makefile.in
