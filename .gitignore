@@ -203,6 +203,7 @@ vice/src/arch/android/AnVICE/assets/cbm-ii_sdl_buks.vkm
 vice/src/arch/android/AnVICE/assets/drives_d1541II
 vice/src/arch/android/AnVICE/assets/drives_d1571cr
 vice/src/arch/android/AnVICE/assets/drives_dos1001
+vice/src/arch/android/AnVICE/assets/drives_dos1540
 vice/src/arch/android/AnVICE/assets/drives_dos1541
 vice/src/arch/android/AnVICE/assets/drives_dos1551
 vice/src/arch/android/AnVICE/assets/drives_dos1570
@@ -304,6 +305,9 @@ vice/src/arch/android/AnVICE/jni/vice_iec/Makefile.in
 vice/src/arch/android/AnVICE/jni/vice_ieeepar/Android.mk
 vice/src/arch/android/AnVICE/jni/vice_ieeepar/Makefile
 vice/src/arch/android/AnVICE/jni/vice_ieeepar/Makefile.in
+vice/src/arch/android/AnVICE/jni/vice_joyport/Android.mk
+vice/src/arch/android/AnVICE/jni/vice_joyport/Makefile
+vice/src/arch/android/AnVICE/jni/vice_joyport/Makefile.in
 vice/src/arch/android/AnVICE/jni/vice_tape/Android.mk
 vice/src/arch/android/AnVICE/jni/vice_tape/Makefile
 vice/src/arch/android/AnVICE/jni/vice_tape/Makefile.in
@@ -344,6 +348,7 @@ vice/src/arch/android/AnVICE/jni/vice_xvic/Android.mk
 vice/src/arch/android/AnVICE/jni/vice_xvic/Makefile
 vice/src/arch/android/AnVICE/jni/vice_xvic/Makefile.in
 vice/src/arch/android/AnVICE/libs
+vice/src/arch/android/AnVICE/local.properties
 vice/src/arch/android/AnVICE/obj
 vice/src/arch/android/AnVICE/res-proto/Makefile
 vice/src/arch/android/AnVICE/res-proto/Makefile.in
