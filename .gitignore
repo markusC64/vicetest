@@ -521,8 +521,6 @@ vice/src/arch/unix/gui/.deps
 vice/src/arch/unix/gui/Makefile
 vice/src/arch/unix/gui/Makefile.in
 vice/src/arch/unix/gui/libarchgui.a
-vice/src/arch/unix/hpux/Makefile
-vice/src/arch/unix/hpux/Makefile.in
 vice/src/arch/unix/libarch.a
 vice/src/arch/unix/macosx/.deps
 vice/src/arch/unix/macosx/Makefile
