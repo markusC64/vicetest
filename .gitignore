@@ -457,8 +457,6 @@ vice/src/arch/os2/watcom/Vice2-*
 vice/src/arch/sdl/.deps
 vice/src/arch/sdl/Makefile
 vice/src/arch/sdl/Makefile.in
-vice/src/arch/sdl/dingoo-files/Makefile
-vice/src/arch/sdl/dingoo-files/Makefile.in
 vice/src/arch/sdl/libarch.a
 vice/src/arch/sdl/msvc-files/Makefile
 vice/src/arch/sdl/msvc-files/Makefile.in
