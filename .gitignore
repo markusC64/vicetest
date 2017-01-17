@@ -603,6 +603,7 @@ vice/src/arch/win32/watcom/Makefile.in
 vice/src/arch/win32/watcom/WinVICE*
 vice/src/bin2c
 vice/src/bin2c.exe
+vice/src/buildtools/Makefile
 vice/src/buildtools/Makefile.in
 vice/src/c128/.deps
 vice/src/c128/Makefile
