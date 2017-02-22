@@ -354,6 +354,9 @@ vice/src/arch/beos/Makefile.in
 vice/src/arch/beos/constants.h
 vice/src/arch/beos/genconstants
 vice/src/arch/beos/libarch.a
+vice/src/arch/gtk3/.deps
+vice/src/arch/gtk3/Makefile
+vice/src/arch/gtk3/Makefile.in
 vice/src/arch/msdos/.deps
 vice/src/arch/msdos/Makefile
 vice/src/arch/msdos/Makefile.in
