@@ -899,6 +899,9 @@ vice/src/lib/p64/.deps
 vice/src/lib/p64/Makefile
 vice/src/lib/p64/Makefile.in
 vice/src/lib/p64/libp64.a
+vice/src/mididrv/.deps
+vice/src/mididrv/Makefile
+vice/src/mididrv/Makefile.in
 vice/src/missing
 vice/src/mkinstalldirs
 vice/src/monitor/.deps
