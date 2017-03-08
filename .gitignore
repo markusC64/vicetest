@@ -1026,6 +1026,9 @@ vice/src/sid/Makefile
 vice/src/sid/Makefile.in
 vice/src/sid/libsid.a
 vice/src/sid/resid.cpp
+vice/src/socketdrv/.deps
+vice/src/socketdrv/Makefile
+vice/src/socketdrv/Makefile.in
 vice/src/sounddrv/.deps
 vice/src/sounddrv/Makefile
 vice/src/sounddrv/Makefile.in
