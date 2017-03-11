@@ -709,6 +709,9 @@ vice/src/gfxoutputdrv/.deps
 vice/src/gfxoutputdrv/Makefile
 vice/src/gfxoutputdrv/Makefile.in
 vice/src/gfxoutputdrv/libgfxoutputdrv.a
+vice/src/hwsiddrv/.deps
+vice/src/hwsiddrv/Makefile
+vice/src/hwsiddrv/Makefile.in
 vice/src/iecbus/.deps
 vice/src/iecbus/Makefile
 vice/src/iecbus/Makefile.in
