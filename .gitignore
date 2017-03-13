@@ -722,6 +722,9 @@ vice/src/imagecontents/Makefile.in
 vice/src/imagecontents/libimagecontents.a
 vice/src/infocontrib.h
 vice/src/install-sh
+vice/src/iodrv/.deps
+vice/src/iodrv/Makefile
+vice/src/iodrv/Makefile.in
 vice/src/joyport/.deps
 vice/src/joyport/Makefile
 vice/src/joyport/Makefile.in
