@@ -792,6 +792,7 @@ vice/src/lib/libffmpeg/doc/config.texi
 vice/src/lib/libffmpeg/doc/examples/pc-uninstalled
 vice/src/lib/libffmpeg/doc/fate.txt
 vice/src/lib/libffmpeg/doc/print_options
+vice/src/lib/libffmpeg/doc/print_options.exe
 vice/src/lib/libffmpeg/include
 vice/src/lib/libffmpeg/lib
 vice/src/lib/libffmpeg/libavcodec/*.d
