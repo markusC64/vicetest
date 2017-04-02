@@ -432,12 +432,16 @@ vice/src/arch/sdl/Makefile.in
 vice/src/arch/sdl/libarch.a
 vice/src/arch/sdl/msvc-files/Makefile
 vice/src/arch/sdl/msvc-files/Makefile.in
+vice/src/arch/sdl/os2-watcom/*.err
 vice/src/arch/sdl/os2-watcom/*.exe
+vice/src/arch/sdl/os2-watcom/*.lb1
+vice/src/arch/sdl/os2-watcom/*.lib
 vice/src/arch/sdl/os2-watcom/*.lk1
 vice/src/arch/sdl/os2-watcom/*.map
 vice/src/arch/sdl/os2-watcom/*.mk
 vice/src/arch/sdl/os2-watcom/*.mk1
 vice/src/arch/sdl/os2-watcom/*.obj
+vice/src/arch/sdl/os2-watcom/*.pch
 vice/src/arch/sdl/os2-watcom/*.sym
 vice/src/arch/sdl/qnx4/Makefile
 vice/src/arch/sdl/qnx4/Makefile.in
