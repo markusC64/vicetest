@@ -443,6 +443,8 @@ vice/src/arch/sdl/os2-watcom/*.mk1
 vice/src/arch/sdl/os2-watcom/*.obj
 vice/src/arch/sdl/os2-watcom/*.pch
 vice/src/arch/sdl/os2-watcom/*.sym
+vice/src/arch/sdl/os2-watcom/Makefile
+vice/src/arch/sdl/os2-watcom/Makefile.in
 vice/src/arch/sdl/qnx4/Makefile
 vice/src/arch/sdl/qnx4/Makefile.in
 vice/src/arch/sdl/sortix-files/Makefile
