@@ -927,6 +927,9 @@ vice/src/monitor/.deps
 vice/src/monitor/Makefile
 vice/src/monitor/Makefile.in
 vice/src/monitor/libmonitor.a
+vice/src/monitor/mon_lex.c
+vice/src/monitor/mon_parse.c
+vice/src/monitor/mon_parse.h
 vice/src/palette2c
 vice/src/parallel/.deps
 vice/src/parallel/Makefile
