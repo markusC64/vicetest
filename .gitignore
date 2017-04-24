@@ -99,8 +99,11 @@ vice/doc/readmes/Makefile
 vice/doc/readmes/Makefile.in
 vice/doc/texinfo.tex
 vice/doc/vice.GID
+vice/doc/vice.chm
 vice/doc/vice.guide
+vice/doc/vice.hlp
 vice/doc/vice.html
+vice/doc/vice.inf
 vice/doc/vice.info
 vice/doc/vice.opts.tmp
 vice/doc/vice.pdf
