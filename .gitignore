@@ -812,6 +812,7 @@ vice/src/lib/libffmpeg/libavutil/ffversion.h
 vice/src/lib/libffmpeg/libavutil/lib*.a
 vice/src/lib/libffmpeg/libavutil/libavutil.pc
 vice/src/lib/libffmpeg/libavutil/libavutil.ver
+vice/src/lib/libffmpeg/libavutil/ppc/*.d
 vice/src/lib/libffmpeg/libavutil/x86/*.d
 vice/src/lib/libffmpeg/libpostproc/*.d
 vice/src/lib/libffmpeg/libpostproc/*.def
@@ -835,6 +836,7 @@ vice/src/lib/libffmpeg/libswscale/*.lib
 vice/src/lib/libffmpeg/libswscale/lib*.a
 vice/src/lib/libffmpeg/libswscale/libswscale.pc
 vice/src/lib/libffmpeg/libswscale/libswscale.ver
+vice/src/lib/libffmpeg/libswscale/ppc/*.d
 vice/src/lib/libffmpeg/libswscale/x86/*.d
 vice/src/lib/libffmpeg/share
 vice/src/lib/libffmpeg/tests
