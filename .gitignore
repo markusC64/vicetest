@@ -385,6 +385,8 @@ vice/src/arch/beos/libarch.a
 vice/src/arch/gtk3/.deps
 vice/src/arch/gtk3/Makefile
 vice/src/arch/gtk3/Makefile.in
+vice/src/arch/gtk3/widgets/.deps
+vice/src/arch/gtk3/widgets/Makefile
 vice/src/arch/gtk3/widgets/Makefile.in
 vice/src/arch/msdos/.deps
 vice/src/arch/msdos/Makefile
