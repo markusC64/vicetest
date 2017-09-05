@@ -501,8 +501,6 @@ vice/src/arch/unix/x11/xaw/widgets/.deps
 vice/src/arch/unix/x11/xaw/widgets/Makefile
 vice/src/arch/unix/x11/xaw/widgets/Makefile.in
 vice/src/arch/unix/x11/xaw/widgets/libwidgets.a
-vice/src/arch/watcom-source-wrappers/Makefile
-vice/src/arch/watcom-source-wrappers/Makefile.in
 vice/src/arch/win32/*.RES
 vice/src/arch/win32/*.plg
 vice/src/arch/win32/*.rc.po.c
