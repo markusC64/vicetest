@@ -557,14 +557,6 @@ vice/src/arch/win32/vs8
 vice/src/arch/win32/vs8-ffmpeg
 vice/src/arch/win32/vs9
 vice/src/arch/win32/vs9-ffmpeg
-vice/src/arch/win32/vs_tmpl/Debug
-vice/src/arch/win32/vs_tmpl/Makefile
-vice/src/arch/win32/vs_tmpl/Makefile.in
-vice/src/arch/win32/vs_tmpl/Release
-vice/src/arch/win32/vs_tmpl/mkmsvc.ncb
-vice/src/arch/win32/vs_tmpl/mkmsvc.opt
-vice/src/arch/win32/vs_tmpl/mkmsvc.pdb
-vice/src/arch/win32/vs_tmpl/mkmsvc.plg
 vice/src/bin2c
 vice/src/bin2c.exe
 vice/src/buildtools/Makefile
