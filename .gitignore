@@ -396,8 +396,6 @@ vice/src/arch/sdl/.deps
 vice/src/arch/sdl/Makefile
 vice/src/arch/sdl/Makefile.in
 vice/src/arch/sdl/libarch.a
-vice/src/arch/sdl/msvc-files/Makefile
-vice/src/arch/sdl/msvc-files/Makefile.in
 vice/src/arch/sdl/qnx4/Makefile
 vice/src/arch/sdl/qnx4/Makefile.in
 vice/src/arch/sdl/sortix-files/Makefile
