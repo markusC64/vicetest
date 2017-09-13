@@ -524,13 +524,10 @@ vice/src/arch/win32/libs
 vice/src/arch/win32/menuid.h
 vice/src/arch/win32/mingw32/Makefile
 vice/src/arch/win32/mingw32/Makefile.in
-vice/src/arch/win32/msvc/Makefile
-vice/src/arch/win32/msvc/Makefile.in
-vice/src/arch/win32/msvc/msvc_ver.h
-vice/src/arch/win32/msvc/wpcap/Makefile
-vice/src/arch/win32/msvc/wpcap/Makefile.in
-vice/src/arch/win32/msvc/wpcap/net/Makefile
-vice/src/arch/win32/msvc/wpcap/net/Makefile.in
+vice/src/arch/win32/mingw32/wpcap/Makefile
+vice/src/arch/win32/mingw32/wpcap/Makefile.in
+vice/src/arch/win32/mingw32/wpcap/net/Makefile
+vice/src/arch/win32/mingw32/wpcap/net/Makefile.in
 vice/src/arch/win32/res*cat.rc
 vice/src/arch/win32/res.h
 vice/src/arch/win32/resall.txt
