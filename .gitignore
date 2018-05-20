@@ -393,10 +393,6 @@ vice/src/arch/gtk3/widgets/Makefile.in
 vice/src/arch/gtk3/widgets/base/.deps
 vice/src/arch/gtk3/widgets/base/Makefile
 vice/src/arch/gtk3/widgets/base/Makefile.in
-vice/src/arch/msdos/.deps
-vice/src/arch/msdos/Makefile
-vice/src/arch/msdos/Makefile.in
-vice/src/arch/msdos/libarch.a
 vice/src/arch/sdl/.deps
 vice/src/arch/sdl/Makefile
 vice/src/arch/sdl/Makefile.in
