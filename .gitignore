@@ -389,6 +389,12 @@ vice/src/arch/gtk3/widgets/Makefile.in
 vice/src/arch/gtk3/widgets/base/.deps
 vice/src/arch/gtk3/widgets/base/Makefile
 vice/src/arch/gtk3/widgets/base/Makefile.in
+vice/src/arch/mingw32-pcap/Makefile
+vice/src/arch/mingw32-pcap/Makefile.in
+vice/src/arch/mingw32-pcap/wpcap/Makefile
+vice/src/arch/mingw32-pcap/wpcap/Makefile.in
+vice/src/arch/mingw32-pcap/wpcap/net/Makefile
+vice/src/arch/mingw32-pcap/wpcap/net/Makefile.in
 vice/src/arch/sdl/.deps
 vice/src/arch/sdl/Makefile
 vice/src/arch/sdl/Makefile.in
