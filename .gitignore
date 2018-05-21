@@ -26,10 +26,6 @@ vice/build/beos/Makefile
 vice/build/beos/Makefile.in
 vice/build/macosx/Makefile
 vice/build/macosx/Makefile.in
-vice/build/mingw32/Makefile
-vice/build/mingw32/Makefile.in
-vice/build/mingw32/mingw32-3.4.2-20040916-1
-vice/build/mingw32/source
 vice/build/minix3/Makefile
 vice/build/minix3/Makefile.in
 vice/build/nextstep/Makefile
