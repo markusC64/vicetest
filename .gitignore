@@ -18,8 +18,6 @@ vice/aclocal.m4
 vice/autom4te.cache
 vice/build/Makefile
 vice/build/Makefile.in
-vice/build/amigaos/Makefile
-vice/build/amigaos/Makefile.in
 vice/build/android/Makefile
 vice/build/android/Makefile.in
 vice/build/beos/Makefile
