@@ -344,12 +344,6 @@ vice/src/arch/android/AnVICE/src/com/locnet/vice/PreConfig.java
 vice/src/arch/android/AnVICE/vice-dev.keystore
 vice/src/arch/android/Makefile
 vice/src/arch/android/Makefile.in
-vice/src/arch/beos/.deps
-vice/src/arch/beos/Makefile
-vice/src/arch/beos/Makefile.in
-vice/src/arch/beos/constants.h
-vice/src/arch/beos/genconstants
-vice/src/arch/beos/libarch.a
 vice/src/arch/gtk3/.deps
 vice/src/arch/gtk3/Makefile
 vice/src/arch/gtk3/Makefile.in
