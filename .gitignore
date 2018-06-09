@@ -326,6 +326,8 @@ vice/src/arch/gtk3/.deps
 vice/src/arch/gtk3/Makefile
 vice/src/arch/gtk3/Makefile.in
 vice/src/arch/gtk3/data/Makefile
+vice/src/arch/gtk3/data/Makefile.in
+vice/src/arch/gtk3/data/vice.gresource
 vice/src/arch/gtk3/widgets/.deps
 vice/src/arch/gtk3/widgets/Makefile
 vice/src/arch/gtk3/widgets/Makefile.in
