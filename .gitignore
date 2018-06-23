@@ -492,6 +492,8 @@ vice/src/gfxoutputdrv/.deps
 vice/src/gfxoutputdrv/Makefile
 vice/src/gfxoutputdrv/Makefile.in
 vice/src/gfxoutputdrv/libgfxoutputdrv.a
+vice/src/hvsc/.deps
+vice/src/hvsc/Makefile
 vice/src/hvsc/Makefile.in
 vice/src/hwsiddrv/.deps
 vice/src/hwsiddrv/Makefile
