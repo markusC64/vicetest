@@ -332,8 +332,12 @@ vice/src/arch/gtk3/data/vice.gresource.xml
 vice/src/arch/gtk3/novte/.deps
 vice/src/arch/gtk3/novte/Makefile
 vice/src/arch/gtk3/novte/Makefile.in
+vice/src/arch/gtk3/novte/box_drawing.h
+vice/src/arch/gtk3/novte/marshal.cc
 vice/src/arch/gtk3/novte/marshal.h
+vice/src/arch/gtk3/novte/stamp-vtetypebuiltins.h
 vice/src/arch/gtk3/novte/vtetypebuiltins.cc
+vice/src/arch/gtk3/novte/vtetypebuiltins.h
 vice/src/arch/gtk3/widgets/.deps
 vice/src/arch/gtk3/widgets/Makefile
 vice/src/arch/gtk3/widgets/Makefile.in
