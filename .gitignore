@@ -358,8 +358,6 @@ vice/src/arch/sdl/qnx4/Makefile
 vice/src/arch/sdl/qnx4/Makefile.in
 vice/src/arch/sdl/sortix-files/Makefile
 vice/src/arch/sdl/sortix-files/Makefile.in
-vice/src/arch/sdl/syllable-files/Makefile
-vice/src/arch/sdl/syllable-files/Makefile.in
 vice/src/arch/sdl/win32-sdl1x-msvc10
 vice/src/arch/sdl/win32-sdl1x-msvc10-ffmpeg
 vice/src/arch/sdl/win32-sdl1x-msvc11
