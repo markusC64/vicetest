@@ -32,8 +32,6 @@ vice/build/openstep/Makefile
 vice/build/openstep/Makefile.in
 vice/build/openwatcom/Makefile
 vice/build/openwatcom/Makefile.in
-vice/build/qnx4/Makefile
-vice/build/qnx4/Makefile.in
 vice/build/rhapsody/Makefile
 vice/build/rhapsody/Makefile.in
 vice/compile
