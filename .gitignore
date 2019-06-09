@@ -65,6 +65,7 @@ vice/data/fonts/Makefile.in
 vice/data/vice.ini
 vice/data/vice.log
 vice/depcomp
+vice/doc/.vice-texi-charset-ok
 vice/doc/Makefile
 vice/doc/Makefile.in
 vice/doc/VICE.ph
