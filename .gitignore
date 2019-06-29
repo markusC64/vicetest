@@ -81,7 +81,6 @@ vice/doc/html/NEWS
 vice/doc/html/vice_*.html
 vice/doc/readmes/Makefile
 vice/doc/readmes/Makefile.in
-vice/doc/texinfo.tex
 vice/doc/vice.GID
 vice/doc/vice.chm
 vice/doc/vice.guide
