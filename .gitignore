@@ -702,6 +702,7 @@ vice/src/lib/libx264/x264
 vice/src/lib/libx264/x264.pc
 vice/src/lib/libx264/x264_config.h
 vice/src/lib/linenoise-ng/.deps
+vice/src/lib/linenoise-ng/Makefile
 vice/src/lib/linenoise-ng/Makefile.in
 vice/src/lib/p64/.deps
 vice/src/lib/p64/Makefile
