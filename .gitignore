@@ -62,8 +62,8 @@ vice/data/SCPU64/Makefile
 vice/data/SCPU64/Makefile.in
 vice/data/VIC20/Makefile
 vice/data/VIC20/Makefile.in
-vice/data/fonts/Makefile
-vice/data/fonts/Makefile.in
+vice/data/common/Makefile
+vice/data/common/Makefile.in
 vice/data/vice.ini
 vice/data/vice.log
 vice/depcomp
