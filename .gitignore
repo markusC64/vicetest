@@ -336,6 +336,8 @@ vice/src/arch/gtk3/widgets/Makefile.in
 vice/src/arch/gtk3/widgets/base/.deps
 vice/src/arch/gtk3/widgets/base/Makefile
 vice/src/arch/gtk3/widgets/base/Makefile.in
+vice/src/arch/headless/Makefile
+vice/src/arch/headless/Makefile.in
 vice/src/arch/mingw32-pcap/Makefile
 vice/src/arch/mingw32-pcap/Makefile.in
 vice/src/arch/mingw32-pcap/wpcap/Makefile
