@@ -29,6 +29,7 @@ vice/build/mingw/Makefile.in
 vice/compile
 vice/conf*-*
 vice/confdefs.h
+vice/config.cache
 vice/config.log
 vice/config.status
 vice/config.status.lineno
