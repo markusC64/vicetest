@@ -81,6 +81,8 @@ vice/doc/html/COPYING
 vice/doc/html/Makefile
 vice/doc/html/Makefile.in
 vice/doc/html/NEWS
+vice/doc/html/images/vice-logo.xcf
+vice/doc/html/images/vice-logo.xpm
 vice/doc/html/vice_*.html
 vice/doc/readmes/Makefile
 vice/doc/readmes/Makefile.in
@@ -90,7 +92,7 @@ vice/doc/vice.guide
 vice/doc/vice.hlp
 vice/doc/vice.html
 vice/doc/vice.inf
-vice/doc/vice.info
+vice/doc/vice.info*
 vice/doc/vice.opts.tmp
 vice/doc/vice.pdf
 vice/doc/vice.rc.tmp
@@ -337,6 +339,7 @@ vice/src/arch/gtk3/widgets/Makefile.in
 vice/src/arch/gtk3/widgets/base/.deps
 vice/src/arch/gtk3/widgets/base/Makefile
 vice/src/arch/gtk3/widgets/base/Makefile.in
+vice/src/arch/headless/.deps
 vice/src/arch/headless/Makefile
 vice/src/arch/headless/Makefile.in
 vice/src/arch/mingw32-pcap/Makefile
