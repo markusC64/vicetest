@@ -22,8 +22,6 @@ vice/build/android/Makefile
 vice/build/android/Makefile.in
 vice/build/beos/Makefile
 vice/build/beos/Makefile.in
-vice/build/macosx/Makefile
-vice/build/macosx/Makefile.in
 vice/build/mingw/Makefile
 vice/build/mingw/Makefile.in
 vice/compile
