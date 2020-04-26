@@ -6,6 +6,7 @@ vice/.autoheader.out
 vice/.automake.out
 vice/.contributors
 vice/.svnlog
+vice/.vscode
 vice/BeVICE-*
 vice/GTK3VICE-*
 vice/Makefile
@@ -113,6 +114,7 @@ vice/src/arch/Makefile
 vice/src/arch/Makefile.in
 vice/src/arch/android/AnVICE/.settings/Makefile
 vice/src/arch/android/AnVICE/.settings/Makefile.in
+vice/src/arch/android/AnVICE/AndroidManifest.xml
 vice/src/arch/android/AnVICE/Makefile
 vice/src/arch/android/AnVICE/Makefile.in
 vice/src/arch/android/AnVICE/ant.properties
@@ -884,6 +886,7 @@ vice/src/vdrive/.deps
 vice/src/vdrive/Makefile
 vice/src/vdrive/Makefile.in
 vice/src/vdrive/libvdrive.a
+vice/src/version.h
 vice/src/vic20/.deps
 vice/src/vic20/Makefile
 vice/src/vic20/Makefile.in
@@ -893,6 +896,7 @@ vice/src/vic20/cart/Makefile.in
 vice/src/vic20/cart/libmascuerade.a
 vice/src/vic20/cart/libvic20cart.a
 vice/src/vic20/libvic20.a
+vice/src/vice-version.sh
 vice/src/vicii/.deps
 vice/src/vicii/Makefile
 vice/src/vicii/Makefile.in
