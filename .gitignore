@@ -437,6 +437,9 @@ vice/src/crtc/.deps
 vice/src/crtc/Makefile
 vice/src/crtc/Makefile.in
 vice/src/crtc/libcrtc.a
+vice/src/datasette/.deps
+vice/src/datasette/Makefile
+vice/src/datasette/Makefile.in
 vice/src/debug.h
 vice/src/depcomp
 vice/src/diag/.deps
