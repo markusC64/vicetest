@@ -98,8 +98,6 @@ vice/doc/vice.rc.tmp
 vice/doc/vice.txt
 vice/dosvice
 vice/gtk3-doxy-errors.log
-vice/man/Makefile
-vice/man/Makefile.in
 vice/missing
 vice/src/*_vpl.h
 vice/src/*basic*.h
