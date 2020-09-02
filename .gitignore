@@ -35,7 +35,6 @@ vice/config.log
 vice/config.status
 vice/config.status.lineno
 vice/configure
-vice/configure.ac
 vice/configure.in
 vice/data/*.exe
 vice/data/*.exp
