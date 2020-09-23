@@ -317,10 +317,13 @@ vice/src/arch/android/Makefile.in
 vice/src/arch/gtk3/.deps
 vice/src/arch/gtk3/Makefile
 vice/src/arch/gtk3/Makefile.in
+vice/src/arch/gtk3/data/*.tmp
 vice/src/arch/gtk3/data/Makefile
 vice/src/arch/gtk3/data/Makefile.in
 vice/src/arch/gtk3/data/icon.rc
 vice/src/arch/gtk3/data/icon.res
+vice/src/arch/gtk3/data/vice-org*.desktop
+vice/src/arch/gtk3/data/vice-org*.directory
 vice/src/arch/gtk3/data/vice.gresource
 vice/src/arch/gtk3/data/vice.gresource.xml
 vice/src/arch/gtk3/novte/.deps
