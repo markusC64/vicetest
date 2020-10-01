@@ -325,7 +325,6 @@ vice/src/arch/gtk3/data/icon.res
 vice/src/arch/gtk3/data/vice-org*.desktop
 vice/src/arch/gtk3/data/vice-org*.directory
 vice/src/arch/gtk3/data/vice.gresource
-vice/src/arch/gtk3/data/vice.gresource.xml
 vice/src/arch/gtk3/novte/.deps
 vice/src/arch/gtk3/novte/Makefile
 vice/src/arch/gtk3/novte/Makefile.in
