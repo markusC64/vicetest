@@ -320,7 +320,6 @@ vice/src/arch/gtk3/Makefile.in
 vice/src/arch/gtk3/data/*.tmp
 vice/src/arch/gtk3/data/Makefile
 vice/src/arch/gtk3/data/Makefile.in
-vice/src/arch/gtk3/data/icon.rc
 vice/src/arch/gtk3/data/icon.res
 vice/src/arch/gtk3/data/macos/Makefile
 vice/src/arch/gtk3/data/macos/Makefile.in
