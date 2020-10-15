@@ -65,6 +65,7 @@ vice/data/VIC20/Makefile
 vice/data/VIC20/Makefile.in
 vice/data/common/Makefile
 vice/data/common/Makefile.in
+vice/data/common/vice.gresource
 vice/data/vice.ini
 vice/data/vice.log
 vice/depcomp
