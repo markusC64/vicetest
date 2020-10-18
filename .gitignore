@@ -63,6 +63,9 @@ vice/data/SCPU64/Makefile
 vice/data/SCPU64/Makefile.in
 vice/data/VIC20/Makefile
 vice/data/VIC20/Makefile.in
+vice/data/common/#[!!-~]Ignore[!!-~]all[!!-~].res[!!-~]and[!!-~].ico[!!-~]files:[!!-~]Should[!!-~]we[!!-~]add[!!-~]those[!!-~]later,[!!-~]fix[!!-~]this[!!-~]rule
+vice/data/common/*.ico
+vice/data/common/*.res
 vice/data/common/Makefile
 vice/data/common/Makefile.in
 vice/data/common/vice.gresource
