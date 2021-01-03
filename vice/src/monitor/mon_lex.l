@@ -128,7 +128,7 @@ send:
 
 HDIGIT  [0-9a-f]
 
-%x FNAME CMD STR ROL ROLQ ASM_MODE COND_MODE REG_ASGN LABEL_ASGN BNAME CTYPE RADIX
+%x FNAME CMD STR ROL ROLQ ASM_MODE COND_MODE REG_ASGN LABEL_ASGN BNAME CTYPE RADIX SETLOG LOGFILE FNAMECMD
 
 %%
 
@@ -147,7 +147,25 @@ HDIGIT  [0-9a-f]
    }
 %}
 
+<SETLOG>{
+        none|n          { BEGIN(INITIAL);   return NONE_MODE; }
+        append|a        { BEGIN(FNAME);   return APPEND; }
+        write|w         { BEGIN(FNAME);   return WRITE; }
+}
+
+<LOGFILE>{
+        none|n        { BEGIN(CMD);   return NONE_MODE; }
+        append|a        { BEGIN(FNAMECMD);   return APPEND; }
+        write|w        { BEGIN(FNAMECMD);   return WRITE; }
+}
+
 <CMD>{
+	\(		{ return L_PAREN; }
+	\)		{ return R_PAREN; }
+        log-file|log|lf { BEGIN(LOGFILE);       return CMD_LOG_FILE; }
+        set-log|slg     { BEGIN(SETLOG);        return CMD_SET_LOG; }
+        ">>"            { BEGIN(FNAMECMD);      return APPEND; }
+        ">|"            { BEGIN(FNAMECMD);      return WRITE; }
         ";"             { BEGIN(ROL);           return CMD_COMMENT; }
         ~               { BEGIN(INITIAL);       return CONVERT_OP; }
         >               { BEGIN(INITIAL);       return CMD_ENTER_DATA; }
@@ -356,6 +374,10 @@ if		{ BEGIN (COND_MODE); return IF; }
 <FNAME>\".+\" { yytext[yyleng-1] = '\0';
                 yylval.str = lib_strdup(yytext+1);
                 BEGIN (INITIAL); return FILENAME; }
+
+<FNAMECMD>\".+\" { yytext[yyleng-1] = '\0';
+                yylval.str = lib_strdup(yytext+1);
+                BEGIN (CMD); return FILENAME; }
 
 <BNAME>[_a-zA-Z0-9]*      { yylval.str = lib_strdup(yytext); BEGIN (INITIAL); return BANKNAME; }
 

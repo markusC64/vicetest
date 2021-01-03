@@ -143,8 +143,8 @@ extern int cur_len, last_len;
 %token CMD_ATTACH CMD_DETACH CMD_MON_RESET CMD_TAPECTRL CMD_CARTFREEZE CMD_UPDB CMD_JPDB
 %token CMD_CPUHISTORY CMD_MEMMAPZAP CMD_MEMMAPSHOW CMD_MEMMAPSAVE
 %token CMD_COMMENT CMD_LIST CMD_STOPWATCH RESET
-%token CMD_EXPORT CMD_AUTOSTART CMD_AUTOLOAD CMD_MAINCPU_TRACE
-%token CMD_WARP
+%token CMD_EXPORT CMD_AUTOSTART CMD_AUTOLOAD CMD_MAINCPU_TRACE CMD_SET_LOG CMD_LOG_FILE
+%token CMD_WARP NONE_MODE APPEND WRITE
 %token<str> CMD_LABEL_ASGN
 %token<i> L_PAREN R_PAREN ARG_IMMEDIATE REG_A REG_X REG_Y COMMA INST_SEP
 %token<i> L_BRACKET R_BRACKET LESS_THAN REG_U REG_S REG_PC REG_PCR
@@ -180,7 +180,13 @@ top_level: command_list { $$ = 0; }
          | TRAIL { new_cmd = 1; asm_mode = 0;  $$ = 0; }
          ;
 
-command_list: command
+command_list: CMD_LOG_FILE logmode command
+              { mon_log_file_close(); }
+            | APPEND logfilenameAppend command
+              { mon_log_file_close(); }
+            | WRITE logfilenameWrite command
+              { mon_log_file_close(); }
+            | command
             | command_list command
             ;
 
@@ -188,6 +194,24 @@ end_cmd: CMD_SEP
        | TRAIL
        | error { return ERR_EXPECT_END_CMD; }
        ;
+
+logmode: APPEND filename
+       { mon_log_file_append($2); }
+       | WRITE filename
+       { mon_log_file_open($2); }
+       | NONE_MODE
+       { mon_log_file_close(); }
+       ;
+
+
+logfilenameAppend: filename
+       { mon_log_file_append($1); }
+       ;
+
+logfilenameWrite: filename
+       { mon_log_file_open($1); }
+       ;
+
 
 command: machine_state_rules
        | symbol_table_rules
@@ -201,8 +225,14 @@ command: machine_state_rules
        | cmd_file_rules
        | data_entry_rules
        | monitor_debug_rules
+       | logfile_rules
+       | L_PAREN command_list R_PAREN end_cmd
        | BAD_CMD { return ERR_BAD_CMD; }
        ;
+
+
+logfile_rules: CMD_SET_LOG logmode end_cmd
+             ;
 
 machine_state_rules: CMD_BANK end_cmd
                      { mon_bank(e_default_space, NULL); }

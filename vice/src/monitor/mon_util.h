@@ -39,6 +39,7 @@ extern void mon_set_command(struct console_s *console_log, char *command, void (
 extern void mon_event_opened(void);
 extern void mon_event_closed(void);
 
+extern int mon_log_file_append(const char *name);
 extern int mon_log_file_open(const char *name);
 extern void mon_log_file_close(void);
 

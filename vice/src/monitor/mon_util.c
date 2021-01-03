@@ -56,6 +56,23 @@ static FILE *mon_log_file = NULL;
 
 /******************************************************************************/
 
+int mon_log_file_append(const char *name)
+{
+    FILE *fp;
+
+    if (name) {
+        /* try to open new file */
+        fp = fopen(name, "at");
+        if (fp) {
+            /* close old logfile */
+            mon_log_file_close();
+            mon_log_file = fp;
+            return 0;
+        }
+    }
+    return -1;
+}
+
 int mon_log_file_open(const char *name)
 {
     FILE *fp;
