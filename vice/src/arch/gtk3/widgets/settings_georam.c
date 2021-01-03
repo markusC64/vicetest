@@ -52,6 +52,8 @@ static const vice_gtk3_radiogroup_entry_t ram_sizes[] = {
     { "1MiB",       1024 },
     { "2MiB",       2048 },
     { "4MiB",       4096 },
+    { "8MiB",       8192 },
+    { "16MiB",      16384 },
     { NULL,         -1 }
 };
 

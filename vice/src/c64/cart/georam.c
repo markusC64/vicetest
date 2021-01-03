@@ -188,15 +188,37 @@ int georam_cart_enabled(void)
 static uint8_t georam_io1_read(uint16_t addr)
 {
     uint8_t retval;
+    
+    uint32_t mask1 = 63;
+    if (georam_size_kb == 8192)  mask1 = 127;
+    if (georam_size_kb == 16384)  mask1 = 255;
+    uint32_t mask2 = (georam_size_kb >> 4) - 1;
+    if (georam_size_kb >= 8192)  mask2 = 255;
+    uint32_t mult1 = 16384;
+    if (georam_size_kb == 8192)  mult1 = 32768;
+    if (georam_size_kb == 16384)  mult1 = 65536;
+    
+    uint32_t ad = ((georam[1] & mask2) * mult1) + ((georam[0] & mask1) * 256) + addr;
 
-    retval = georam_ram[(georam[1] * 16384) + (georam[0] * 256) + addr];
+    retval = georam_ram[ad];
 
     return retval;
 }
 
 static void georam_io1_store(uint16_t addr, uint8_t byte)
 {
-    georam_ram[(georam[1] * 16384) + (georam[0] * 256) + addr] = byte;
+    uint32_t mask1 = 63;
+    if (georam_size_kb == 8192)  mask1 = 127;
+    if (georam_size_kb == 16384)  mask1 = 255;
+    uint32_t mask2 = (georam_size_kb >> 4) - 1;
+    if (georam_size_kb >= 8192)  mask2 = 255;
+    uint32_t mult1 = 16384;
+    if (georam_size_kb == 8192)  mult1 = 32768;
+    if (georam_size_kb == 16384)  mult1 = 65536;
+    
+    uint32_t ad = ((georam[1] & mask2) * mult1) + ((georam[0] & mask1) * 256) + addr;
+
+    georam_ram[ad] = byte;
 }
 
 static uint8_t georam_io2_peek(uint16_t addr)
@@ -209,18 +231,7 @@ static uint8_t georam_io2_peek(uint16_t addr)
 
 static void georam_io2_store(uint16_t addr, uint8_t byte)
 {
-    if ((addr & 1) == 1) {
-        while (byte > ((georam_size_kb / 16) - 1)) {
-            byte = byte - (unsigned char)(georam_size_kb / 16);
-        }
-        georam[1] = byte;
-    }
-    if ((addr & 1) == 0) {
-        while (byte > 63) {
-            byte = byte - 64;
-        }
-        georam[0] = byte;
-    }
+    georam[addr & 1] = byte;
 }
 
 static int georam_dump(void)
@@ -369,6 +380,8 @@ static int set_georam_size(int val, void *param)
         case 1024:
         case 2048:
         case 4096:
+	case 8192:
+	case 16384:
             break;
         default:
             log_message(georam_log, "Unknown GEORAM size %d.", val);
