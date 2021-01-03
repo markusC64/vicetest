@@ -241,7 +241,7 @@ static io_source_t vicii_d000_device = {
     "VIC-II",              /* name of the chip */
     IO_DETACH_NEVER,       /* chip is never involved in collisions, so no detach */
     IO_DETACH_NO_RESOURCE, /* does not use a resource for detach */
-    0xd000, 0xd0ff, 0x3f,  /* regs: $d000-d03f, mirrors: $d040-$d0ff */
+    0xd000, 0xd0ff, 0x3f,  /* regs: $d000-d03f, mirrors: $d040-$d07f */
     1,                     /* read is always valid */
     vicii_store,           /* store function */
     NULL,                  /* NO poke function */
@@ -253,6 +253,24 @@ static io_source_t vicii_d000_device = {
     0,                     /* insertion order, gets filled in by the registration function */
     IO_MIRROR_MASK         /* contains mirrors, defined by mask */
 };
+
+static io_source_t vicii_d080_device = {
+    "VIC-II $D080-$D0FF mirrors", /* name of the chip */
+    IO_DETACH_CART,        /* chip is never involved in collisions, so no detach */
+    IO_DETACH_NO_RESOURCE, /* does not use a resource for detach */
+    0xd080, 0xd0ff, 0x3f,  /* regs: $d000-d03f, mirrors: $d040-$d07f */
+    1,                     /* read is always valid */
+    vicii_store,           /* store function */
+    NULL,                  /* NO poke function */
+    vicii_read,            /* read function */
+    vicii_peek,            /* peek function */
+    vicii_dump,            /* chip state information dump function */
+    IO_CART_ID_NONE,       /* not a cartridge */
+    IO_PRIO_LOW,           /* low  priority */
+    0,                     /* insertion order, gets filled in by the registration function */
+    IO_MIRROR_MASK         /* contains mirrors, defined by mask */
+};
+
 
 /* The following I/O range is only used when +60K or +256K memory hacks are not active.
    The +60K or +256K memory hacks unregister this range and use their own replacement.
@@ -400,6 +418,7 @@ static io_source_t sid_d700_device = {
 };
 
 static io_source_list_t *vicii_d000_list_item = NULL;
+static io_source_list_t *vicii_d080_list_item = NULL;
 static io_source_list_t *vicii_d100_list_item = NULL;
 static io_source_list_t *vicii_d200_list_item = NULL;
 static io_source_list_t *vicii_d300_list_item = NULL;
@@ -412,6 +431,7 @@ static io_source_list_t *sid_d700_list_item = NULL;
 void c64io_vicii_reinit(void)
 {
     vicii_d000_list_item = io_source_register(&vicii_d000_device);
+    vicii_d080_list_item = io_source_register(&vicii_d080_device);
     vicii_d100_list_item = io_source_register(&vicii_d100_device);
     vicii_d200_list_item = io_source_register(&vicii_d200_device);
     vicii_d300_list_item = io_source_register(&vicii_d300_device);
@@ -433,6 +453,11 @@ void c64io_vicii_deinit(void)
     if (vicii_d000_list_item != NULL) {
         io_source_unregister(vicii_d000_list_item);
         vicii_d000_list_item = NULL;
+    }
+
+    if (vicii_d080_list_item != NULL) {
+        io_source_unregister(vicii_d080_list_item);
+        vicii_d080_list_item = NULL;
     }
 
     if (vicii_d100_list_item != NULL) {

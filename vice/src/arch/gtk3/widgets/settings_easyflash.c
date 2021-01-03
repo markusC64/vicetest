@@ -8,6 +8,9 @@
  * $VICERES EasyFlashJumper         x64 x64sc xscpu64 x128
  * $VICERES EasyFlashWriteCRT       x64 x64sc xscpu64 x128
  * $VICERES EasyFlashOptimizeCRT    x64 x64sc xscpu64 x128
+ * $VICERES EasyFlash1541U2Mode     x64 x64sc xscpu64 x128
+ * $VICERES EasyFlashTC64Mode       x64 x64sc xscpu64 x128
+ * $VICERES EasyFlashReplaceEAPI    x64 x64sc xscpu64 x128
  */
 
 /*
@@ -109,6 +112,9 @@ GtkWidget *settings_easyflash_widget_create(GtkWidget *parent)
     GtkWidget *jumper;
     GtkWidget *write_crt;
     GtkWidget *optimize_crt;
+    GtkWidget *mode_1541u2;
+    GtkWidget *mode_tc64;
+    GtkWidget *update_eapi;
     GtkWidget *save_button;
     GtkWidget *flush_button;
 
@@ -121,9 +127,20 @@ GtkWidget *settings_easyflash_widget_create(GtkWidget *parent)
     optimize_crt = vice_gtk3_resource_check_button_new(
             "EasyFlashOptimizeCRT", "Optimize image when saving");
 
+    mode_1541u2 = vice_gtk3_resource_check_button_new(
+            "EasyFlash1541U2Mode", "1541 Ultimate II Easyflash Emulation");
+    mode_tc64 = vice_gtk3_resource_check_button_new(
+            "EasyFlashTC64Mode", "Turbo Chameleon Easyflash Emulation");
+    update_eapi = vice_gtk3_resource_check_button_new(
+            "EasyFlashReplaceEAPI", "Easyflash EAPI Update");
+
     gtk_grid_attach(GTK_GRID(grid), jumper, 0, 0, 1, 1);
     gtk_grid_attach(GTK_GRID(grid), write_crt, 0, 1, 1, 1);
     gtk_grid_attach(GTK_GRID(grid), optimize_crt, 0, 2, 1, 1);
+
+    gtk_grid_attach(GTK_GRID(grid), mode_1541u2, 0, 3, 1, 1);
+    gtk_grid_attach(GTK_GRID(grid), mode_tc64, 0, 4, 1, 1);
+    gtk_grid_attach(GTK_GRID(grid), update_eapi, 0, 5, 1, 1);
 
     /* Save image as... */
     save_button = gtk_button_new_with_label("Save image as ...");

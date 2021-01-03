@@ -1,3 +1,4 @@
+
 /*
  * easyflash.c - Cartridge handling of the easyflash cart.
  *
@@ -51,6 +52,7 @@
 #include "resources.h"
 #include "snapshot.h"
 #include "util.h"
+#include "sysfile.h"
 
 #define EASYFLASH_N_BANK_BITS 6
 #define EASYFLASH_N_BANKS     (1 << (EASYFLASH_N_BANK_BITS))
@@ -68,6 +70,29 @@ static int easyflash_crt_write;
 
 /* optimizing crt enabled */
 static int easyflash_crt_optimize;
+
+static int easyflash_1541u2_mode;
+static int easyflash_tc64_mode;
+static int easyflash_replace_eapi;
+
+struct uci_queue
+{
+	int size;
+	int pos;
+	unsigned char data[896];
+};
+
+static struct uci_queue easyflash_1541u2_uci_command;
+static struct uci_queue easyflash_1541u2_uci_status;
+static struct uci_queue easyflash_1541u2_uci_data;
+
+static int easyflash_1541u2_data_acc;
+static int easyflash_1541u2_error;
+static int easyflash_1541u2_state;
+static int easyflash_1541u2_reset;
+
+static int easyflash_1541u2_changestateWait;
+static int easyflash_1541u2_changestateNewState;
 
 /* backup of the registers */
 static uint8_t easyflash_register_00, easyflash_register_02;
@@ -206,28 +231,468 @@ static const unsigned char eapiam29f040[768] = {
     0xff, 0xff
 };
 
+static int easyflash_write = 0;
+static int easyflash_write_addr = 0;
+static int easyflash_write_flash = 0;
+
+static uint8_t easyflash_tc64_d0fe = 255;
+static uint8_t easyflash_tc64_d0fa = 0;
+static uint8_t easyflash_tc64_d0a0 = 0;
+static uint8_t easyflash_tc64_d0a1 = 0;
+static uint8_t easyflash_tc64_d0a2 = 0;
+static uint8_t easyflash_tc64_d0a3 = 0;
+static uint8_t easyflash_tc64_d0af = 0;
+
+
+static char eapiNew[768] = {0x00};
+
+static char eapiTc64[768] = { 0 };
+
+
 /* ---------------------------------------------------------------------*/
+static io_source_list_t *easyflash_io1_list_item = NULL;
+static io_source_list_t *easyflash_io2_list_item = NULL;
+static io_source_list_t *easyflash_d0a0_list_item = NULL;
+static io_source_list_t *easyflash_d0f0_list_item = NULL;
+static io_source_list_t *easyflash_d700_list_item = NULL;
+
+static uint8_t easyflash_d080_read(uint16_t addr);
+static void easyflash_d080_store(uint16_t addr, uint8_t value);
+static uint8_t easyflash_d700_read(uint16_t addr);
+static void easyflash_d700_store(uint16_t addr, uint8_t value);
+static void easyflash_io1_store(uint16_t addr, uint8_t value);
+static uint8_t easyflash_io1_read(uint16_t addr);
+static uint8_t easyflash_io2_read(uint16_t addr);
+static void easyflash_io2_store(uint16_t addr, uint8_t value);
+static uint8_t easyflash_io1_peek(uint16_t addr);
+static int easyflash_io1_dump(void);
+
+
+static io_source_t easyflash_d700_device = {
+    CARTRIDGE_NAME_EASYFLASH,
+    IO_DETACH_CART,
+    NULL,
+    0xd700, 0xd7ff, 0xff,
+    1,
+    easyflash_d700_store,
+    easyflash_d700_read,
+    easyflash_d700_read,
+    NULL,
+    CARTRIDGE_EASYFLASH,
+    0,
+    0
+};
+
+static io_source_t easyflash_d0a0_device = {
+    CARTRIDGE_NAME_EASYFLASH,
+    IO_DETACH_CART,
+    NULL,
+    0xd0a0, 0xd0af, 0x7f,
+    1,
+    easyflash_d080_store,
+    easyflash_d080_read,
+    easyflash_d080_read,
+    NULL,
+    CARTRIDGE_EASYFLASH,
+    0,
+    0
+};
+
+static io_source_t easyflash_d0f0_device = {
+    CARTRIDGE_NAME_EASYFLASH,
+    IO_DETACH_CART,
+    NULL,
+    0xd0f1, 0xd0ff, 0x7f,
+    1,
+    easyflash_d080_store,
+    easyflash_d080_read,
+    easyflash_d080_read,
+    NULL,
+    CARTRIDGE_EASYFLASH,
+    0,
+    0
+};
+
+static io_source_t easyflash_io1_device = {
+    CARTRIDGE_NAME_EASYFLASH,
+    IO_DETACH_CART,
+    NULL,
+    0xde00, 0xdeff, 0xff,
+    1,
+    easyflash_io1_store,
+    easyflash_io1_read,
+    easyflash_io1_peek,
+    easyflash_io1_dump,
+    CARTRIDGE_EASYFLASH,
+    0,
+    0
+};
+
+static io_source_t easyflash_io2_device = {
+    CARTRIDGE_NAME_EASYFLASH,
+    IO_DETACH_CART,
+    NULL,
+    0xdf00, 0xdfff, 0xff,
+    1, /* read is always valid */
+    easyflash_io2_store,
+    easyflash_io2_read,
+    easyflash_io2_read, /* same implementation */
+    NULL, /* nothing to dump */
+    CARTRIDGE_EASYFLASH,
+    0,
+    0
+};
+
+static const export_resource_t export_res = {
+    CARTRIDGE_NAME_EASYFLASH, 1, 1, &easyflash_io1_device, &easyflash_io2_device, CARTRIDGE_EASYFLASH
+};
+
+static void easyflash_process_uci_command()
+{
+  int size = easyflash_1541u2_uci_command.size;
+	unsigned char target = easyflash_1541u2_uci_command.data[0];
+	unsigned char command = easyflash_1541u2_uci_command.data[1];
+	unsigned char subcommand = easyflash_1541u2_uci_command.data[2];
+	
+	if (target == 4 && command == 1 && size >= 2)
+   {
+      memcpy(easyflash_1541u2_uci_status.data, "00,OK", 5);
+      easyflash_1541u2_uci_status.size = 5;
+      memcpy(easyflash_1541u2_uci_data.data, "CONTROL TARGET V1.0", 19);
+      easyflash_1541u2_uci_data.size = 19;
+	}
+	else if (target == 4 && command == 0x20 && subcommand == 0 && size >= 5)
+   {
+      memcpy(easyflash_1541u2_uci_status.data, "00,OK", 5);
+      easyflash_1541u2_uci_status.size = 5;
+      easyflash_1541u2_uci_data.size = 0;
+      unsigned char bank = easyflash_1541u2_uci_command.data[3];
+      unsigned char base = easyflash_1541u2_uci_command.data[4];
+      int addr = 8192*(bank & 0x38);
+      
+      if (base & 0x20)
+      	for (int i=0; i<65536; i++) romh_banks[addr+i] = 0xff;
+      else
+      	for (int i=0; i<65536; i++) roml_banks[addr+i] = 0xff;
+	}
+	else
+   {
+      memcpy(easyflash_1541u2_uci_status.data, "21,UNKNOWN COMMAND", 19);
+      easyflash_1541u2_uci_status.size = 19;
+      easyflash_1541u2_uci_data.size = 0;
+	}
+}
+
+static uint8_t easyflash_d080_read(uint16_t addr)
+{
+   if (!easyflash_tc64_mode) return 0;
+
+   if (((addr & 0x7f) == 0x7e))
+      return easyflash_tc64_d0fe;
+
+   if (((addr & 0x7f) == 0x7a) && (easyflash_tc64_d0fe == 0x2a))
+      return easyflash_tc64_d0fa;
+
+   if (((addr & 0x7f) == 0x2f) && (easyflash_tc64_d0fa & 2))
+      return easyflash_tc64_d0af;
+
+   if (((addr & 0x7f) == 0x20) && (easyflash_tc64_d0af == 0x27) && (easyflash_tc64_d0fa & 2))
+      return easyflash_tc64_d0a0;
+   if (((addr & 0x7f) == 0x21) && (easyflash_tc64_d0af == 0x27) && (easyflash_tc64_d0fa & 2))
+      return easyflash_tc64_d0a1;
+   if (((addr & 0x7f) == 0x22) && (easyflash_tc64_d0af == 0x27) && (easyflash_tc64_d0fa & 2))
+      return easyflash_tc64_d0a2;
+   if (((addr & 0x7f) == 0x23) && (easyflash_tc64_d0af == 0x27) && (easyflash_tc64_d0fa & 2))
+      return easyflash_tc64_d0a3;
+
+
+   return 0;
+}
+
+static void easyflash_d080_store(uint16_t addr, uint8_t value)
+{
+   if (!easyflash_tc64_mode) return;
+
+// printf("d080.store: %x, %x\n", addr, value);
+
+   if (((addr & 0x7f) == 0x7e) && (value == 0x2a))
+      easyflash_tc64_d0fe = 0x2a;
+   if (((addr & 0x7f) == 0x7e) && (value == 0xff))
+      easyflash_tc64_d0fe = 0xff;
+
+   if (((addr & 0x7f) == 0x7a) && (easyflash_tc64_d0fe == 0x2a))
+   {
+      easyflash_tc64_d0fa = value;
+      if (value & 2)
+         if (!easyflash_d0a0_list_item)
+	    easyflash_d0a0_list_item = io_source_register(&easyflash_d0a0_device);
+      else
+      {
+         if (easyflash_d0a0_list_item)
+            io_source_unregister(easyflash_d0a0_list_item);
+         easyflash_d0a0_list_item = 0;
+      }
+
+      if (value & 0x20)
+         if (!easyflash_d700_list_item)
+	    easyflash_d700_list_item = io_source_register(&easyflash_d700_device);
+      else
+      {
+         if (easyflash_d700_list_item)
+            io_source_unregister(easyflash_d700_list_item);
+         easyflash_d700_list_item = 0;
+      }
+   }
+   if (((addr & 0x7f) == 0x2f) && (easyflash_tc64_d0fa & 2))
+      easyflash_tc64_d0af = value;
+
+   if (((addr & 0x7f) == 0x20) && (easyflash_tc64_d0af == 0x27) && (easyflash_tc64_d0fa & 2))
+      easyflash_tc64_d0a0 = value;
+   if (((addr & 0x7f) == 0x21) && (easyflash_tc64_d0af == 0x27) && (easyflash_tc64_d0fa & 2))
+      easyflash_tc64_d0a1 = value;
+   if (((addr & 0x7f) == 0x22) && (easyflash_tc64_d0af == 0x27) && (easyflash_tc64_d0fa & 2))
+      easyflash_tc64_d0a2 = value;
+   if (((addr & 0x7f) == 0x23) && (easyflash_tc64_d0af == 0x27) && (easyflash_tc64_d0fa & 2))
+      easyflash_tc64_d0a3 = value;
+}
+
+
+static uint8_t easyflash_d700_read(uint16_t addr)
+{
+   if (!easyflash_tc64_mode) return 0;
+   // return (uint8_t) addr;
+   if (!(easyflash_tc64_d0fa & 0x20)) return 0;
+   // FIXME???
+   if (easyflash_tc64_d0af != 0x27)  return 0;
+
+   uint32_t flashaddr = (((uint32_t)easyflash_tc64_d0a3) << 24) | (((uint32_t)easyflash_tc64_d0a2) << 16) | (((uint32_t)easyflash_tc64_d0a1) << 8) | (((uint32_t)easyflash_tc64_d0a0) << 0);
+   flashaddr -= 0xf2f1f0f0;
+   flashaddr += addr & 0xff;
+   uint32_t a1 = flashaddr & 0x1fff;
+   uint32_t a2 = flashaddr & 0x2000;
+   uint32_t a3 = flashaddr >> 14;
+   
+   uint32_t ad = a1 | (a3 << 13);
+
+   if (ad >= 512*1024)  return 0;
+
+   if (a2)
+      return romh_banks[ad];
+   else
+      return roml_banks[ad];
+}
+
+static void easyflash_d700_store(uint16_t addr, uint8_t value)
+{
+   if (!easyflash_tc64_mode) return;
+
+   if (!(easyflash_tc64_d0fa & 0x20)) return;
+   if (easyflash_tc64_d0af != 0x27)  return;
+
+//printf("d700.store: %x, %x, %02x%02x%02x%02x\n", addr, value, easyflash_tc64_d0a3, easyflash_tc64_d0a2, easyflash_tc64_d0a1, easyflash_tc64_d0a0);
+
+   uint32_t flashaddr = (((uint32_t)easyflash_tc64_d0a3) << 24) | (((uint32_t)easyflash_tc64_d0a2) << 16) | (((uint32_t)easyflash_tc64_d0a1) << 8) | (((uint32_t)easyflash_tc64_d0a0) << 0);
+   flashaddr += addr & 0xff;
+   uint32_t a1 = flashaddr & 0x1fff;
+   uint32_t a2 = flashaddr & 0x2000;
+   uint32_t a3 = flashaddr >> 14;
+   
+   uint32_t ad = a1 | (a3 << 13);
+
+//printf("d700.store: %x, %x, %02x%02x%02x%02x -> %x %x %x %02x\n", addr, value, easyflash_tc64_d0a3, easyflash_tc64_d0a2, easyflash_tc64_d0a1, easyflash_tc64_d0a0, a1, a2, a3, ad);
+
+   if (ad >= 512*1024)  return;
+
+   if (a2)
+      romh_banks[ad] = value;
+   else
+      roml_banks[ad] = value;
+}
+
+
 
 static void easyflash_io1_store(uint16_t addr, uint8_t value)
 {
     uint8_t mem_mode;
-
-    switch (addr & 2) {
+    // printf("DEBUG: addr&255=%i, value=%i\n", addr & 255, value);
+    if (!easyflash_1541u2_mode)
+    	 addr &= 2;
+    switch (addr & 255) {
         case 0:
             /* bank register */
             easyflash_register_00 = (uint8_t)(value & EASYFLASH_BANK_MASK);
             break;
-        default:
+        case 2:
             /* mode register */
             easyflash_register_02 = value & 0x87; /* we only remember led, mode, exrom, game */
             mem_mode = easyflash_memconfig[(easyflash_jumper << 3) | (easyflash_register_02 & 0x07)];
             cart_config_changed_slotmain(mem_mode, mem_mode, CMODE_READ);
             /* TODO: change led */
             /* (value & 0x80) -> led on if true, led off if false */
+            break;
+        case 9:
+        	easyflash_write = 0;
+        	break;
+        case 8:
+        	if ( easyflash_write == 0 && value == 0x65)  easyflash_write = 1;
+        	else if ( easyflash_write == 1 && value == 0x66)  easyflash_write = 2;
+        	else if ( easyflash_write == 1)  easyflash_write = 0;
+        	else if ( easyflash_write == 2 && value == 0x77)  easyflash_write = 3;
+        	else if ( easyflash_write == 2)  easyflash_write = 0;
+         else if ( easyflash_write == 3)
+        	{
+        		easyflash_write_addr = (easyflash_write_addr & ~0xff) | value;
+        		easyflash_write = 4;
+        	}
+        	else if ( easyflash_write == 4)
+        	{
+        		easyflash_write_addr = (easyflash_write_addr & ~0x1f00) | (((unsigned int)value)<<8);
+        		easyflash_write_flash = (value >> 5) & 1;
+        		easyflash_write = 5;
+        	}
+                else if ( easyflash_write == 5)
+        	{
+        		easyflash_write_addr = (easyflash_write_addr & ~ (0x3f << 13)) | (((unsigned int)value)<<13);
+        		easyflash_write = 6;
+        	}
+        	else
+        		easyflash_write = 0;
+        	break;
+        case 7:
+            if (easyflash_write == 6)
+            	{
+        	//printf("Updating flash\n");
+            	if (easyflash_write_flash)
+            		romh_banks[easyflash_write_addr] = value;
+            	else
+            		roml_banks[easyflash_write_addr] = value;
+            	}
+        	break;
+            	
+        case 0x1D:
+        	 if (easyflash_1541u2_state)
+        	 	   easyflash_1541u2_error = 1;
+          else
+          	{
+          		if (easyflash_1541u2_uci_command.size < 895)
+          		   easyflash_1541u2_uci_command.data[easyflash_1541u2_uci_command.size++] = value;
+          		else
+          		  easyflash_1541u2_error = 1;
+          	}
+        	break;
+
+        case 0x1C:
+          	{
+          		if (value & 8)   easyflash_1541u2_error = 0;
+          		if (value & 4) 
+          		{
+          			if (!easyflash_1541u2_reset)
+          			   easyflash_1541u2_reset = 8; 
+          		}
+          		if ((value & 2) &&(easyflash_1541u2_state == 2))
+          		{
+          	   		easyflash_1541u2_changestateWait = 4;
+          	   		easyflash_1541u2_changestateNewState = 0;
+          	   }
+          	   if ((value & 1) && (easyflash_1541u2_state == 0))
+               {
+          	   		easyflash_1541u2_changestateWait = 4;
+          	   		easyflash_1541u2_changestateNewState = 2;
+                  easyflash_1541u2_state = 1;                                                         
+          	   }
+          		
+          	}
+        	break;
     }
+//    printf("DEBUG: easyflash_write=%i, easyflash_write_addr=%i, easyflash_write_flash=%i\n", easyflash_write, easyflash_write_addr, easyflash_write_flash);
     cart_romhbank_set_slotmain(easyflash_register_00);
     cart_romlbank_set_slotmain(easyflash_register_00);
     cart_port_config_changed_slotmain();
+}
+
+static uint8_t easyflash_io1_read(uint16_t addr)
+{
+    uint8_t val = 0;
+	  if ( (addr & 255) == 7)
+            if (easyflash_write == 6)
+            	{
+//            	printf("Reading flash\n");
+//    printf("DEBUG: read: easyflash_write=%i, easyflash_write_addr=%i, easyflash_write_flash=%i\n", easyflash_write, easyflash_write_addr, easyflash_write_flash);
+
+            	if (easyflash_write_flash)
+            		val = romh_banks[easyflash_write_addr];
+            	else
+            		val = roml_banks[easyflash_write_addr];
+            	}
+	  if ( (addr & 255) == 0x1d && easyflash_1541u2_mode)
+	  	   val = 0xC9;
+	  if ( (addr & 255) == 0x1e && easyflash_1541u2_mode && (easyflash_1541u2_state == 2))
+	  {
+	  	   if (easyflash_1541u2_uci_data.pos< easyflash_1541u2_uci_data.size)
+	  	   	val = easyflash_1541u2_uci_data.data[easyflash_1541u2_uci_data.pos++];
+	  }
+	  if ( (addr & 255) == 0x1f && easyflash_1541u2_mode && (easyflash_1541u2_state == 2))
+	  {
+	  	   if (easyflash_1541u2_uci_status.pos< easyflash_1541u2_uci_status.size)
+	  	   	val = easyflash_1541u2_uci_status.data[easyflash_1541u2_uci_status.pos++];
+	  }
+	  if ( (addr & 255) == 0x1c && easyflash_1541u2_mode)
+	  	{
+	  		if (easyflash_1541u2_reset > 0)
+	  			{
+	  				if (easyflash_1541u2_reset > 1)
+	  					easyflash_1541u2_reset--;
+	  				else
+	  				{
+    					easyflash_1541u2_data_acc = 0;
+    					easyflash_1541u2_error = 0;
+    					easyflash_1541u2_state = 0;
+    					easyflash_1541u2_reset = 0;
+    		
+    					easyflash_1541u2_changestateWait = -1;
+    					easyflash_1541u2_changestateNewState = -1;
+    		
+    					easyflash_1541u2_uci_command.size = 0;
+    					easyflash_1541u2_uci_command.pos = 0;
+	  				}
+	  			}
+	  		
+	  		if (easyflash_1541u2_changestateWait >= 0)
+	  			{
+	  				if (easyflash_1541u2_changestateWait == 0)
+	  				{
+	  					easyflash_1541u2_state = easyflash_1541u2_changestateNewState;
+	  					easyflash_1541u2_changestateWait = -1;
+	  					if (easyflash_1541u2_changestateNewState == 2)
+	  						{
+	  							easyflash_process_uci_command();
+	  							easyflash_1541u2_uci_status.pos = 0;
+	  							easyflash_1541u2_uci_data.pos = 0;
+	  						}
+	  					if (easyflash_1541u2_changestateNewState == 0)
+	  						{
+	  							easyflash_1541u2_data_acc = 0;
+    							easyflash_1541u2_uci_command.size = 0;
+    							easyflash_1541u2_uci_command.pos = 0;
+	  						}
+	  				}
+	  				else
+	  					easyflash_1541u2_changestateWait--;
+	  					
+	  			}
+	  		int stat = easyflash_1541u2_state << 4;
+	  		if (easyflash_1541u2_reset)   stat |= 4;
+	  		if (easyflash_1541u2_error)   stat |= 8;
+	  		if (easyflash_1541u2_data_acc)   stat |= 2;
+	  		// Bit 1 unknown
+	  		if ((easyflash_1541u2_state == 2) && (easyflash_1541u2_uci_status.pos< easyflash_1541u2_uci_status.size))   stat |= 0x40;
+	  		if ((easyflash_1541u2_state == 2) && (easyflash_1541u2_uci_data.pos< easyflash_1541u2_uci_data.size))   stat |= 0x80;
+        val = (unsigned char) stat;
+	  	}
+            	
+
+//    printf("DEBUG: read: addr&255=%i, val=%i\n", addr & 255, val);
+        return val;
 }
 
 static uint8_t easyflash_io2_read(uint16_t addr)
@@ -260,47 +725,6 @@ static int easyflash_io1_dump(void)
 
 /* ---------------------------------------------------------------------*/
 
-static io_source_t easyflash_io1_device = {
-    CARTRIDGE_NAME_EASYFLASH, /* name of the device */
-    IO_DETACH_CART,           /* use cartridge ID to detach the device when involved in a read-collision */
-    IO_DETACH_NO_RESOURCE,    /* does not use a resource for detach */
-    0xde00, 0xdeff, 0x03,     /* range for the device, regs:$de00-$de03, mirrors:$de04-$deff */
-    0,                        /* read is never valid, regs are write only */
-    easyflash_io1_store,      /* store function */
-    NULL,                     /* NO poke function */
-    NULL,                     /* NO read function */
-    easyflash_io1_peek,       /* peek function */
-    easyflash_io1_dump,       /* device state information dump function */
-    CARTRIDGE_EASYFLASH,      /* cartridge ID */
-    IO_PRIO_NORMAL,           /* normal priority, device read needs to be checked for collisions */
-    0                         /* insertion order, gets filled in by the registration function */
-};
-
-static io_source_t easyflash_io2_device = {
-    CARTRIDGE_NAME_EASYFLASH, /* name of the device */
-    IO_DETACH_CART,           /* use cartridge ID to detach the device when involved in a read-collision */
-    IO_DETACH_NO_RESOURCE,    /* does not use a resource for detach */
-    0xdf00, 0xdfff, 0xff,     /* range for the device, regs:$df00-$dfff */
-    1,                        /* read is always valid */
-    easyflash_io2_store,      /* store function */
-    NULL,                     /* NO poke function */
-    easyflash_io2_read,       /* read function */
-    easyflash_io2_read,       /* peek function, same implementation */
-    NULL,                     /* device state information dump function */
-    CARTRIDGE_EASYFLASH,      /* cartridge ID */
-    IO_PRIO_NORMAL,           /* normal priority, device read needs to be checked for collisions */
-    0                         /* insertion order, gets filled in by the registration function */
-};
-
-static io_source_list_t *easyflash_io1_list_item = NULL;
-static io_source_list_t *easyflash_io2_list_item = NULL;
-
-static const export_resource_t export_res = {
-    CARTRIDGE_NAME_EASYFLASH, 1, 1, &easyflash_io1_device, &easyflash_io2_device, CARTRIDGE_EASYFLASH
-};
-
-/* ---------------------------------------------------------------------*/
-
 static int set_easyflash_jumper(int val, void *param)
 {
     easyflash_jumper = val ? 1 : 0;
@@ -316,6 +740,24 @@ static int set_easyflash_crt_write(int val, void *param)
 static int set_easyflash_crt_optimize(int val, void *param)
 {
     easyflash_crt_optimize = val ? 1 : 0;
+    return 0;
+}
+
+static int set_easyflash_1541u2_mode(int val, void *param)
+{
+    easyflash_1541u2_mode = val ? 1 : 0;
+    return 0;
+}
+
+static int set_easyflash_tc64_mode(int val, void *param)
+{
+    easyflash_tc64_mode = val ? 1 : 0;
+    return 0;
+}
+
+static int set_easyflash_replace_eapi(int val, void *param)
+{
+    easyflash_replace_eapi = val ? 1 : 0;
     return 0;
 }
 
@@ -343,6 +785,12 @@ static const resource_int_t resources_int[] = {
       &easyflash_crt_write, set_easyflash_crt_write, NULL },
     { "EasyFlashOptimizeCRT", 1, RES_EVENT_STRICT, (resource_value_t)1,
       &easyflash_crt_optimize, set_easyflash_crt_optimize, NULL },
+    { "EasyFlash1541U2Mode", 0, RES_EVENT_STRICT, (resource_value_t)0,
+      &easyflash_1541u2_mode, set_easyflash_1541u2_mode, NULL },
+    { "EasyFlashTC64Mode", 0, RES_EVENT_STRICT, (resource_value_t)0,
+      &easyflash_tc64_mode, set_easyflash_tc64_mode, NULL },
+    { "EasyFlashReplaceEAPI", 1, RES_EVENT_STRICT, (resource_value_t)1,
+      &easyflash_replace_eapi, set_easyflash_replace_eapi, NULL },
     RESOURCE_INT_LIST_END
 };
 
@@ -377,6 +825,28 @@ static const cmdline_option_t cmdline_options[] =
     { "+easyflashcrtoptimize", SET_RESOURCE, CMDLINE_ATTRIB_NONE,
       NULL, NULL, "EasyFlashOptimizeCRT", (resource_value_t)0,
       NULL, "Disable writing to EasyFlash .crt image" },
+
+    { "-easyflash1541u2mode", SET_RESOURCE, CMDLINE_ATTRIB_NONE,
+      NULL, NULL, "EasyFlash1541U2Mode", (resource_value_t)1,
+      NULL, "Enable 1541 Ultimate II mode" },
+    { "+easyflash1541u2mode", SET_RESOURCE, CMDLINE_ATTRIB_NONE,
+      NULL, NULL, "EasyFlash1541U2Mode", (resource_value_t)0,
+      NULL, "Disable 1541 Ultimate II mode" },
+
+    { "-easyflashtc64mode", SET_RESOURCE, CMDLINE_ATTRIB_NONE,
+      NULL, NULL, "EasyFlashTC64Mode", (resource_value_t)1,
+      NULL, "Enable Turbo Chameleon 64 mode" },
+    { "+easyflashtc64mode", SET_RESOURCE, CMDLINE_ATTRIB_NONE,
+      NULL, NULL, "EasyFlashTC64Mode", (resource_value_t)0,
+      NULL, "Disable Turbo Chameleon 64 mode" },
+
+    { "-easyflashreplaceeapi", SET_RESOURCE, CMDLINE_ATTRIB_NONE,
+      NULL, NULL, "EasyFlash1541ReplaceEapi", (resource_value_t)1,
+      NULL, "Enable replacing EAPI" },
+    { "+easyflashreplaceeapi", SET_RESOURCE, CMDLINE_ATTRIB_NONE,
+      NULL, NULL, "EasyFlash1541ReplaceEapi", (resource_value_t)0,
+      NULL, "Disable replacing EAPI" },
+
     CMDLINE_LIST_END
 };
 
@@ -394,7 +864,8 @@ uint8_t easyflash_roml_read(uint16_t addr)
 
 void easyflash_roml_store(uint16_t addr, uint8_t value)
 {
-    flash040core_store(easyflash_state_low, (easyflash_register_00 * 0x2000) + (addr & 0x1fff), value);
+     if (!easyflash_1541u2_mode && !easyflash_tc64_mode)
+        flash040core_store(easyflash_state_low, (easyflash_register_00 * 0x2000) + (addr & 0x1fff), value);
 }
 
 uint8_t easyflash_romh_read(uint16_t addr)
@@ -404,7 +875,8 @@ uint8_t easyflash_romh_read(uint16_t addr)
 
 void easyflash_romh_store(uint16_t addr, uint8_t value)
 {
-    flash040core_store(easyflash_state_high, (easyflash_register_00 * 0x2000) + (addr & 0x1fff), value);
+     if (!easyflash_1541u2_mode && !easyflash_tc64_mode)
+        flash040core_store(easyflash_state_high, (easyflash_register_00 * 0x2000) + (addr & 0x1fff), value);
 }
 
 void easyflash_mmu_translate(unsigned int addr, uint8_t **base, int *start, int *limit)
@@ -481,6 +953,24 @@ void easyflash_config_init(void)
 void easyflash_config_setup(uint8_t *rawcart)
 {
     int i;
+    if (!eapiNew[0])
+       sysfile_load("eapi1541u2", "DRIVES", eapiNew, 768, 768);
+       
+    if (!eapiTc64[0])
+    {
+    	char* tmp = malloc(1000000);
+    	memset(tmp, 0, 1000000);
+    	sysfile_load("rom-menu.bin", "DRIVES", tmp, 768, 1000000);
+    	for (int i=0; i<1000000-768; i++)
+    	{
+           if ( (tmp[i+0] == eapiam29f040[0]) && (tmp[i+1] == eapiam29f040[1]) && (tmp[i+2] == eapiam29f040[2]) && (tmp[i+3] == eapiam29f040[3]) )
+           {
+              memcpy(eapiTc64, tmp+i, 768);
+              break;
+           }
+       }
+       free(tmp);
+    }		
 
     easyflash_state_low = lib_malloc(sizeof(flash040_context_t));
     easyflash_state_high = lib_malloc(sizeof(flash040_context_t));
@@ -504,10 +994,31 @@ void easyflash_config_setup(uint8_t *rawcart)
         }
         eapi[k] = 0;
         log_message(LOG_DEFAULT, "EF: EAPI found (%s)", eapi);
-        memcpy(romh_banks + 0x1800, eapiam29f040, 768);
+
+        if (easyflash_replace_eapi)
+	          if (easyflash_1541u2_mode)
+               memcpy(romh_banks+0x1800, eapiNew, 768 );
+            else if (easyflash_tc64_mode)
+               memcpy(romh_banks+0x1800, eapiTc64, 768 );
+            else
+               memcpy(romh_banks+0x1800, eapiam29f040, 768 );
     } else {
         log_warning(LOG_DEFAULT, "EF: EAPI not found! Are you sure this is a proper EasyFlash image?");
     }
+    
+    if (easyflash_1541u2_mode)
+    	{
+    		easyflash_1541u2_data_acc = 0;
+    		easyflash_1541u2_error = 0;
+    		easyflash_1541u2_state = 0;
+    		easyflash_1541u2_reset = 0;
+    		
+    		easyflash_1541u2_changestateWait = -1;
+    		easyflash_1541u2_changestateNewState = -1;
+    		
+    		easyflash_1541u2_uci_command.size = 0;
+    		easyflash_1541u2_uci_command.pos = 0;
+    	}
 }
 
 /* ---------------------------------------------------------------------*/
@@ -520,6 +1031,16 @@ static int easyflash_common_attach(const char *filename)
 
     easyflash_io1_list_item = io_source_register(&easyflash_io1_device);
     easyflash_io2_list_item = io_source_register(&easyflash_io2_device);
+    if (easyflash_tc64_mode)
+    {
+       easyflash_d0f0_list_item = io_source_register(&easyflash_d0f0_device);
+    }
+    else
+    {
+       easyflash_d0f0_list_item = 0;
+    }
+    easyflash_d0a0_list_item = 0;
+    easyflash_d700_list_item = 0;
 
     easyflash_filename = lib_strdup(filename);
 
@@ -586,8 +1107,17 @@ void easyflash_detach(void)
     easyflash_filename = NULL;
     io_source_unregister(easyflash_io1_list_item);
     io_source_unregister(easyflash_io2_list_item);
+    if (easyflash_d0a0_list_item)
+       io_source_unregister(easyflash_d0a0_list_item);
+    if (easyflash_d0f0_list_item)
+       io_source_unregister(easyflash_d0f0_list_item);
+    if (easyflash_d700_list_item)
+       io_source_unregister(easyflash_d700_list_item);
     easyflash_io1_list_item = NULL;
     easyflash_io2_list_item = NULL;
+    easyflash_d0a0_list_item = NULL;
+    easyflash_d0a0_list_item = NULL;
+    easyflash_d700_list_item = NULL;
     export_remove(&export_res);
 }
 
