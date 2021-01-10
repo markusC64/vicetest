@@ -901,6 +901,14 @@ vice/src/tapeport/.deps
 vice/src/tapeport/Makefile
 vice/src/tapeport/Makefile.in
 vice/src/team.tmp
+vice/src/tools/.deps
+vice/src/tools/Makefile
+vice/src/tools/Makefile.in
+vice/src/tools/cartconv/.deps
+vice/src/tools/cartconv/Makefile
+vice/src/tools/cartconv/Makefile.in
+vice/src/tools/cartconv/cartconv
+vice/src/tools/cartconv/cartconv.exe
 vice/src/translate.c.po.c
 vice/src/translate.h
 vice/src/translate_table.h
