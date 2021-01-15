@@ -909,6 +909,10 @@ vice/src/tools/cartconv/Makefile
 vice/src/tools/cartconv/Makefile.in
 vice/src/tools/cartconv/cartconv
 vice/src/tools/cartconv/cartconv.exe
+vice/src/tools/petcat/.deps
+vice/src/tools/petcat/Makefile
+vice/src/tools/petcat/Makefile.in
+vice/src/tools/petcat/petcat
 vice/src/translate.c.po.c
 vice/src/translate.h
 vice/src/translate_table.h
