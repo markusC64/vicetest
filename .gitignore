@@ -775,6 +775,9 @@ vice/src/petcat.exe
 vice/src/plus4/.deps
 vice/src/plus4/Makefile
 vice/src/plus4/Makefile.in
+vice/src/plus4/cart/.deps
+vice/src/plus4/cart/Makefile
+vice/src/plus4/cart/Makefile.in
 vice/src/plus4/libplus4.a
 vice/src/plus43plus1*.h
 vice/src/printerdrv/.deps
