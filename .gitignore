@@ -916,6 +916,7 @@ vice/src/tools/petcat/.deps
 vice/src/tools/petcat/Makefile
 vice/src/tools/petcat/Makefile.in
 vice/src/tools/petcat/petcat
+vice/src/tools/petcat/petcat.exe
 vice/src/translate.c.po.c
 vice/src/translate.h
 vice/src/translate_table.h
