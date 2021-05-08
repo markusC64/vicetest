@@ -549,8 +549,7 @@ vice/src/iodrv/Makefile.in
 vice/src/joyport/.deps
 vice/src/joyport/Makefile
 vice/src/joyport/Makefile.in
-vice/src/joystickdrv/Makefile
-vice/src/joystickdrv/Makefile.in
+vice/src/joystickdrv/.deps
 vice/src/lib/Makefile
 vice/src/lib/Makefile.in
 vice/src/lib/ffmpeg/.config
