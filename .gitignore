@@ -453,6 +453,9 @@ vice/src/cartconv.exe
 vice/src/cbm2/.deps
 vice/src/cbm2/Makefile
 vice/src/cbm2/Makefile.in
+vice/src/cbm2/cart/.deps
+vice/src/cbm2/cart/Makefile
+vice/src/cbm2/cart/Makefile.in
 vice/src/cbm2/libcbm2.a
 vice/src/cbm2/libcbm5x0.a
 vice/src/config.h
