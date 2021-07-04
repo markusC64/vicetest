@@ -51,6 +51,8 @@ vice/data/CBM-II/Makefile
 vice/data/CBM-II/Makefile.in
 vice/data/DRIVES/Makefile
 vice/data/DRIVES/Makefile.in
+vice/data/GLSL/Makefile
+vice/data/GLSL/Makefile.in
 vice/data/Makefile
 vice/data/Makefile.in
 vice/data/PET/Makefile
