@@ -91,6 +91,7 @@ vice/data/common/xscpu64.res
 vice/data/common/xvic.ico
 vice/data/common/xvic.res
 vice/data/pango-1.45
+vice/data/pango-cache
 vice/data/vice.ini
 vice/data/vice.log
 vice/depcomp
