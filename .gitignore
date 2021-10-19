@@ -124,8 +124,11 @@ vice/doc/vice.opts.tmp
 vice/doc/vice.pdf
 vice/doc/vice.rc.tmp
 vice/doc/vice.txt
+vice/doc/vim/Makefile
 vice/doc/vim/Makefile.in
+vice/doc/vim/ftdetect/Makefile
 vice/doc/vim/ftdetect/Makefile.in
+vice/doc/vim/syntax/Makefile
 vice/doc/vim/syntax/Makefile.in
 vice/dosvice
 vice/gtk3-doxy-errors.log
