@@ -1,3 +1,4 @@
+/.vscode
 vice/*.apk
 vice/*.gz
 vice/.aclocal.out
