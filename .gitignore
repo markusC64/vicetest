@@ -141,6 +141,7 @@ vice/src/*edit*.h
 vice/src/*kernal*.h
 vice/src/*waterloo*.h
 vice/src/.deps
+vice/src/.vicedate
 vice/src/Makefile
 vice/src/Makefile.in
 vice/src/arch/Makefile
@@ -770,6 +771,7 @@ vice/src/vic20/cart/libmascuerade.a
 vice/src/vic20/cart/libvic20cart.a
 vice/src/vic20/libvic20.a
 vice/src/vice-version.sh
+vice/src/vicedate.h
 vice/src/vicii/.deps
 vice/src/vicii/Makefile
 vice/src/vicii/Makefile.in
