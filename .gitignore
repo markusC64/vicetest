@@ -111,6 +111,7 @@ vice/doc/html/Makefile.in
 vice/doc/html/NEWS
 vice/doc/html/images/vice-logo.xcf
 vice/doc/html/images/vice-logo.xpm
+vice/doc/html/vice.texi
 vice/doc/html/vice_*.html
 vice/doc/readmes/Makefile
 vice/doc/readmes/Makefile.in
