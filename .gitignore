@@ -772,7 +772,6 @@ vice/src/vic20/cart/libmascuerade.a
 vice/src/vic20/cart/libvic20cart.a
 vice/src/vic20/libvic20.a
 vice/src/vice-version.sh
-vice/src/vicedate.h
 vice/src/vicii/.deps
 vice/src/vicii/Makefile
 vice/src/vicii/Makefile.in
