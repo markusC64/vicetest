@@ -272,6 +272,10 @@ vice/src/core/.deps
 vice/src/core/Makefile
 vice/src/core/Makefile.in
 vice/src/core/libcore.a
+vice/src/core/rtc/.deps
+vice/src/core/rtc/Makefile
+vice/src/core/rtc/Makefile.in
+vice/src/core/rtc/librtc.a
 vice/src/crtc/.deps
 vice/src/crtc/Makefile
 vice/src/crtc/Makefile.in
@@ -488,10 +492,6 @@ vice/src/rs232drv/.deps
 vice/src/rs232drv/Makefile
 vice/src/rs232drv/Makefile.in
 vice/src/rs232drv/librs232drv.a
-vice/src/rtc/.deps
-vice/src/rtc/Makefile
-vice/src/rtc/Makefile.in
-vice/src/rtc/librtc.a
 vice/src/samplerdrv/.deps
 vice/src/samplerdrv/Makefile
 vice/src/samplerdrv/Makefile.in
