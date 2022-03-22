@@ -576,10 +576,6 @@ vice/src/viciisc/.deps
 vice/src/viciisc/Makefile
 vice/src/viciisc/Makefile.in
 vice/src/viciisc/libviciisc.a
-vice/src/viciivsid/.deps
-vice/src/viciivsid/Makefile
-vice/src/viciivsid/Makefile.in
-vice/src/viciivsid/lib*.a
 vice/src/video/.deps
 vice/src/video/Makefile
 vice/src/video/Makefile.in
