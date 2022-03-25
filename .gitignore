@@ -160,6 +160,9 @@ vice/src/arch/gtk3/data/vice.gresource
 vice/src/arch/gtk3/data/win32/Makefile
 vice/src/arch/gtk3/data/win32/Makefile.in
 vice/src/arch/gtk3/data/win32/icon.res
+vice/src/arch/gtk3/joystickdrv/.deps
+vice/src/arch/gtk3/joystickdrv/Makefile
+vice/src/arch/gtk3/joystickdrv/Makefile.in
 vice/src/arch/gtk3/novte/.deps
 vice/src/arch/gtk3/novte/Makefile
 vice/src/arch/gtk3/novte/Makefile.in
@@ -364,9 +367,6 @@ vice/src/iodrv/Makefile.in
 vice/src/joyport/.deps
 vice/src/joyport/Makefile
 vice/src/joyport/Makefile.in
-vice/src/joystickdrv/.deps
-vice/src/joystickdrv/Makefile
-vice/src/joystickdrv/Makefile.in
 vice/src/lib/Makefile
 vice/src/lib/Makefile.in
 vice/src/lib/linenoise-ng/.deps
