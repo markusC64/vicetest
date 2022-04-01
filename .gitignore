@@ -223,6 +223,10 @@ vice/src/arch/sdl/winmips-msvc
 vice/src/arch/shared/.deps
 vice/src/arch/shared/Makefile
 vice/src/arch/shared/Makefile.in
+vice/src/arch/shared/sounddrv/.deps
+vice/src/arch/shared/sounddrv/Makefile
+vice/src/arch/shared/sounddrv/Makefile.in
+vice/src/arch/shared/sounddrv/libsounddrv.a
 vice/src/bin2c
 vice/src/bin2c.exe
 vice/src/buildtools/Makefile
@@ -506,10 +510,6 @@ vice/src/sid/resid.cpp
 vice/src/socketdrv/.deps
 vice/src/socketdrv/Makefile
 vice/src/socketdrv/Makefile.in
-vice/src/sounddrv/.deps
-vice/src/sounddrv/Makefile
-vice/src/sounddrv/Makefile.in
-vice/src/sounddrv/libsounddrv.a
 vice/src/stamp-h1
 vice/src/svnversion.h
 vice/src/svnversion_dummy.h
