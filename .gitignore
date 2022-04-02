@@ -223,6 +223,9 @@ vice/src/arch/sdl/winmips-msvc
 vice/src/arch/shared/.deps
 vice/src/arch/shared/Makefile
 vice/src/arch/shared/Makefile.in
+vice/src/arch/shared/hwsiddrv/.deps
+vice/src/arch/shared/hwsiddrv/Makefile
+vice/src/arch/shared/hwsiddrv/Makefile.in
 vice/src/arch/shared/iodrv/.deps
 vice/src/arch/shared/iodrv/Makefile
 vice/src/arch/shared/iodrv/Makefile.in
@@ -233,6 +236,9 @@ vice/src/arch/shared/samplerdrv/.deps
 vice/src/arch/shared/samplerdrv/Makefile
 vice/src/arch/shared/samplerdrv/Makefile.in
 vice/src/arch/shared/samplerdrv/libsamplerdrv.a
+vice/src/arch/shared/socketdrv/.deps
+vice/src/arch/shared/socketdrv/Makefile
+vice/src/arch/shared/socketdrv/Makefile.in
 vice/src/arch/shared/sounddrv/.deps
 vice/src/arch/shared/sounddrv/Makefile
 vice/src/arch/shared/sounddrv/Makefile.in
@@ -356,9 +362,6 @@ vice/src/gfxoutputdrv/libgfxoutputdrv.a
 vice/src/hvsc/.deps
 vice/src/hvsc/Makefile
 vice/src/hvsc/Makefile.in
-vice/src/hwsiddrv/.deps
-vice/src/hwsiddrv/Makefile
-vice/src/hwsiddrv/Makefile.in
 vice/src/iecbus/.deps
 vice/src/iecbus/Makefile
 vice/src/iecbus/Makefile.in
@@ -507,9 +510,6 @@ vice/src/sid/Makefile
 vice/src/sid/Makefile.in
 vice/src/sid/libsid.a
 vice/src/sid/resid.cpp
-vice/src/socketdrv/.deps
-vice/src/socketdrv/Makefile
-vice/src/socketdrv/Makefile.in
 vice/src/stamp-h1
 vice/src/svnversion.h
 vice/src/svnversion_dummy.h
