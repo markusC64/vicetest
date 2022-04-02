@@ -223,6 +223,9 @@ vice/src/arch/sdl/winmips-msvc
 vice/src/arch/shared/.deps
 vice/src/arch/shared/Makefile
 vice/src/arch/shared/Makefile.in
+vice/src/arch/shared/mididrv/.deps
+vice/src/arch/shared/mididrv/Makefile
+vice/src/arch/shared/mididrv/Makefile.in
 vice/src/arch/shared/sounddrv/.deps
 vice/src/arch/shared/sounddrv/Makefile
 vice/src/arch/shared/sounddrv/Makefile.in
@@ -374,9 +377,6 @@ vice/src/lib/p64/.deps
 vice/src/lib/p64/Makefile
 vice/src/lib/p64/Makefile.in
 vice/src/lib/p64/libp64.a
-vice/src/mididrv/.deps
-vice/src/mididrv/Makefile
-vice/src/mididrv/Makefile.in
 vice/src/missing
 vice/src/mkinstalldirs
 vice/src/monitor/.deps
