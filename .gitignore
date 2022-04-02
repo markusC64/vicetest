@@ -223,6 +223,9 @@ vice/src/arch/sdl/winmips-msvc
 vice/src/arch/shared/.deps
 vice/src/arch/shared/Makefile
 vice/src/arch/shared/Makefile.in
+vice/src/arch/shared/iodrv/.deps
+vice/src/arch/shared/iodrv/Makefile
+vice/src/arch/shared/iodrv/Makefile.in
 vice/src/arch/shared/mididrv/.deps
 vice/src/arch/shared/mididrv/Makefile
 vice/src/arch/shared/mididrv/Makefile.in
@@ -366,9 +369,6 @@ vice/src/imagecontents/Makefile.in
 vice/src/imagecontents/libimagecontents.a
 vice/src/infocontrib.h
 vice/src/install-sh
-vice/src/iodrv/.deps
-vice/src/iodrv/Makefile
-vice/src/iodrv/Makefile.in
 vice/src/joyport/.deps
 vice/src/joyport/Makefile
 vice/src/joyport/Makefile.in
