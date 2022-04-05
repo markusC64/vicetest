@@ -232,10 +232,6 @@ vice/src/arch/shared/iodrv/Makefile.in
 vice/src/arch/shared/mididrv/.deps
 vice/src/arch/shared/mididrv/Makefile
 vice/src/arch/shared/mididrv/Makefile.in
-vice/src/arch/shared/samplerdrv/.deps
-vice/src/arch/shared/samplerdrv/Makefile
-vice/src/arch/shared/samplerdrv/Makefile.in
-vice/src/arch/shared/samplerdrv/libsamplerdrv.a
 vice/src/arch/shared/socketdrv/.deps
 vice/src/arch/shared/socketdrv/Makefile
 vice/src/arch/shared/socketdrv/Makefile.in
@@ -497,6 +493,10 @@ vice/src/rs232drv/.deps
 vice/src/rs232drv/Makefile
 vice/src/rs232drv/Makefile.in
 vice/src/rs232drv/librs232drv.a
+vice/src/samplerdrv/.deps
+vice/src/samplerdrv/Makefile
+vice/src/samplerdrv/Makefile.in
+vice/src/samplerdrv/libsamplerdrv.a
 vice/src/scpu64/.deps
 vice/src/scpu64/Makefile
 vice/src/scpu64/Makefile.in
