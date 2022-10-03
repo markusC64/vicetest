@@ -246,6 +246,7 @@ vice/src/buildtools/Makefile.in
 vice/src/c128/.deps
 vice/src/c128/Makefile
 vice/src/c128/Makefile.in
+vice/src/c128/cart/Makefile.in
 vice/src/c128/libc128.a
 vice/src/c1541
 vice/src/c1541.exe
