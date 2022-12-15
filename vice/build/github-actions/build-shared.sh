@@ -16,6 +16,7 @@ ARGS="
     --enable-midi \
     --enable-cpuhistory \
     --enable-ffmpeg \
+    --enable-x64 \
     "
 
 # Set configure options, check UI, set OTHER_UI
