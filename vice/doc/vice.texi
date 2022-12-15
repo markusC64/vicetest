@@ -12286,7 +12286,7 @@ contents changed, when detaching or quitting the emulator.
 @vindex GEORAMsize
 @item GEORAMsize
 Integer specifying the size of the emulated GEO-RAM in KiB.
-(512, 1024, 2048, 4096).
+(64, 128, 256, 512, 1024, 2048, 4096).
 (x64, x64sc, x128).
 
 @vindex MIDIEnable
@@ -12419,7 +12419,7 @@ Allow/disallow writing to GEORAM image
 @item -georamsize <size in KiB>
 Size of the GEORAM expansion unit
 (@code{GEORAMsize}).
-(512, 1024, 2048, 4096)
+(64, 128, 256, 512, 1024, 2048, 4096)
 
 @findex -reu, +reu
 @item -reu
@@ -14165,7 +14165,7 @@ Boolean specifying whether the GEO-RAM cartridge (using the MasC=uerade cartridg
 @vindex GEORAMsize
 @item GEORAMsize
 Integer specifying the size of the emulated GEO-RAM in KiB.
-(512, 1024, 2048, 4096).
+(64, 128, 256, 512, 1024, 2048, 4096).
 
 @vindex GEORAMImageWrite
 @item GEORAMImageWrite
@@ -14492,7 +14492,7 @@ Allow/disallow writing to GEORAM image
 @item -georamsize <size in KiB>
 Size of the GEORAM expansion unit
 (@code{GEORAMsize}).
-(512, 1024, 2048, 4096)
+(64, 128, 256, 512, 1024, 2048, 4096)
 
 @findex -model
 @item -model <model>
