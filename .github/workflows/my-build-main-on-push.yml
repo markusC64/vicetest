@@ -1,0 +1,173 @@
+name: Snapshot Build
+on:
+  push:
+    branches: '*'
+concurrency:
+  group: Snapshot Build
+  cancel-in-progress: true
+
+jobs:
+  build:
+    name: Build
+    runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        arch:
+        - { msystem: MINGW64, arch: x86_64, prefix: mingw64 }
+          #- { msystem: MINGW32, arch: i686,   prefix: mingw32 }
+        ui: [ GTK3 ]
+    steps:
+      - run: git config --global core.autocrlf input
+        shell: bash
+
+      - name: Checkout Source
+        uses: actions/checkout@v6
+
+      - name: Install GTK3 Dependencies if Applicable
+        if: ${{ matrix.ui == 'GTK3' }}
+        uses: msys2/setup-msys2@v2
+        with:
+          msystem: ${{ matrix.arch.msystem }}
+          update: true
+          # CAUTION: use same packages in make-release.yml
+          install: >-
+            autotools
+            base-devel
+            git
+            mingw-w64-${{ matrix.arch.arch }}-curl
+            mingw-w64-${{ matrix.arch.arch }}-docbook-xml
+            mingw-w64-${{ matrix.arch.arch }}-docbook-xsl
+            mingw-w64-${{ matrix.arch.arch }}-flac
+            mingw-w64-${{ matrix.arch.arch }}-giflib
+            mingw-w64-${{ matrix.arch.arch }}-glew
+            mingw-w64-${{ matrix.arch.arch }}-gtk3
+            mingw-w64-${{ matrix.arch.arch }}-icoutils
+            mingw-w64-${{ matrix.arch.arch }}-lame
+            mingw-w64-${{ matrix.arch.arch }}-libpcap
+            mingw-w64-${{ matrix.arch.arch }}-libusb
+            mingw-w64-${{ matrix.arch.arch }}-libvorbis
+            mingw-w64-${{ matrix.arch.arch }}-mpg123
+            mingw-w64-${{ matrix.arch.arch }}-ntldd
+            mingw-w64-${{ matrix.arch.arch }}-pkg-config
+            mingw-w64-${{ matrix.arch.arch }}-portaudio
+            mingw-w64-${{ matrix.arch.arch }}-toolchain
+            mingw-w64-${{ matrix.arch.arch }}-xa65
+            mingw-w64-${{ matrix.arch.arch }}-iconv
+            p7zip
+            subversion
+            unzip
+            xmlto
+            zip
+
+      - name: Install SDL2 Dependencies if Applicable
+        if: ${{ matrix.ui == 'SDL2' }}
+        uses: msys2/setup-msys2@v2
+        with:
+          msystem: ${{ matrix.arch.msystem }}
+          update: true
+          # CAUTION: use same packages in make-release.yml
+          install: >-
+            autotools
+            base-devel
+            git
+            mingw-w64-${{ matrix.arch.arch }}-SDL2
+            mingw-w64-${{ matrix.arch.arch }}-SDL2_image
+            mingw-w64-${{ matrix.arch.arch }}-curl
+            mingw-w64-${{ matrix.arch.arch }}-docbook-xml
+            mingw-w64-${{ matrix.arch.arch }}-docbook-xsl
+            mingw-w64-${{ matrix.arch.arch }}-flac
+            mingw-w64-${{ matrix.arch.arch }}-giflib
+            mingw-w64-${{ matrix.arch.arch }}-glew
+            mingw-w64-${{ matrix.arch.arch }}-icoutils
+            mingw-w64-${{ matrix.arch.arch }}-lame
+            mingw-w64-${{ matrix.arch.arch }}-libpcap
+            mingw-w64-${{ matrix.arch.arch }}-libusb
+            mingw-w64-${{ matrix.arch.arch }}-libvorbis
+            mingw-w64-${{ matrix.arch.arch }}-mpg123
+            mingw-w64-${{ matrix.arch.arch }}-ntldd
+            mingw-w64-${{ matrix.arch.arch }}-pkg-config
+            mingw-w64-${{ matrix.arch.arch }}-portaudio
+            mingw-w64-${{ matrix.arch.arch }}-toolchain
+            mingw-w64-${{ matrix.arch.arch }}-xa65
+            mingw-w64-${{ matrix.arch.arch }}-iconv
+            p7zip
+            subversion
+            unzip
+            xmlto
+            zip
+
+      - name: Install SDL1 Dependencies if Applicable
+        if: ${{ matrix.ui == 'SDL1' }}
+        uses: msys2/setup-msys2@v2
+        with:
+          msystem: ${{ matrix.arch.msystem }}
+          update: true
+          # CAUTION: use same packages in make-release.yml
+          install: >-
+            autotools
+            base-devel
+            git
+            mingw-w64-${{ matrix.arch.arch }}-SDL
+            mingw-w64-${{ matrix.arch.arch }}-SDL_image
+            mingw-w64-${{ matrix.arch.arch }}-curl
+            mingw-w64-${{ matrix.arch.arch }}-docbook-xml
+            mingw-w64-${{ matrix.arch.arch }}-docbook-xsl
+            mingw-w64-${{ matrix.arch.arch }}-flac
+            mingw-w64-${{ matrix.arch.arch }}-giflib
+            mingw-w64-${{ matrix.arch.arch }}-glew
+            mingw-w64-${{ matrix.arch.arch }}-icoutils
+            mingw-w64-${{ matrix.arch.arch }}-lame
+            mingw-w64-${{ matrix.arch.arch }}-libpcap
+            mingw-w64-${{ matrix.arch.arch }}-libusb
+            mingw-w64-${{ matrix.arch.arch }}-libvorbis
+            mingw-w64-${{ matrix.arch.arch }}-mpg123
+            mingw-w64-${{ matrix.arch.arch }}-ntldd
+            mingw-w64-${{ matrix.arch.arch }}-pkg-config
+            mingw-w64-${{ matrix.arch.arch }}-portaudio
+            mingw-w64-${{ matrix.arch.arch }}-toolchain
+            mingw-w64-${{ matrix.arch.arch }}-xa65
+            mingw-w64-${{ matrix.arch.arch }}-iconv
+            p7zip
+            subversion
+            unzip
+            xmlto
+            zip
+
+      - name: Build and install libieee1284
+        id: build_libieee1284
+        shell: msys2 {0}
+        run: |
+          OLDDIR=$(pwd)
+          mkdir ~/work/
+          cd ~/work
+          git clone https://github.com/twaugh/libieee1284
+          cd libieee1284
+          export XML_CATALOG_FILES="/${{ matrix.arch.prefix }}/etc/xml/catalog"
+          ./bootstrap
+          ./configure --without-python
+          make CFLAGS="-Wno-incompatible-pointer-types"
+          make install
+          cd "$OLDDIR"
+
+      - name: Build
+        id: build
+        shell: msys2 {0}
+        run: |
+          MINGW_INSTALLS=${{ matrix.arch.msystem }} ./vice/build/github-actions/build-msys2.sh ${{ matrix.ui }} "$(echo "${{ github.ref }}" | sed 's,.*/,,')"
+          echo "zip_path=$(cygpath -w -a vice/*.zip)"       >> $GITHUB_OUTPUT
+          echo "zip_name=$(basename vice/*.zip)"            >> $GITHUB_OUTPUT
+          echo "seven_zip_path=$(cygpath -w -a vice/*.7z)"  >> $GITHUB_OUTPUT
+          echo "seven_zip_name=$(basename vice/*.7z)"       >> $GITHUB_OUTPUT
+
+      - name: Upload Zip
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.build.outputs.zip_name }}
+          path: ${{ steps.build.outputs.zip_path }}
+
+      - name: Upload 7Zip
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ steps.build.outputs.seven_zip_name }}
+          path: ${{ steps.build.outputs.seven_zip_path }}
