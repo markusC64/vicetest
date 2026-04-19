@@ -961,7 +961,7 @@ static int set_size(int size, void *param)
     rl_cardsize = rl_cardsizemb << 20;
 
     /* setup a full map */
-    for (i = 0; i < 64 ; i++) {
+    for (i = 0; i < 256 ; i++) {
         rl_memmap[i] = i;
     }
 
@@ -971,7 +971,7 @@ static int set_size(int size, void *param)
             rl_memmap[i] = -1;
         }
         /* mirror to full 64MB range */
-        for (i = 4; i < 64 ; i++) {
+        for (i = 4; i < 256 ; i++) {
             rl_memmap[i] = rl_memmap[ i & 3 ];
         }
     } else if (rl_cardsizemb <= 16) {
@@ -987,12 +987,12 @@ static int set_size(int size, void *param)
             }
         }
         /* mirror to full 64MB range */
-        for (i = 16; i < 64 ; i++) {
+        for (i = 16; i < 256 ; i++) {
             rl_memmap[i] = rl_memmap[ i & 15 ];
         }
     } else {
         /* assume remaining slots are open */
-        for (i = rl_cardsizemb; i < 64 ; i++) {
+        for (i = rl_cardsizemb; i < 256 ; i++) {
             rl_memmap[i] = -1;
         }
         if ((rl_cardsizemb & 7) == 1) {
@@ -1013,7 +1013,7 @@ static int set_size(int size, void *param)
 
 #if 0
     printf("* RL_MEMMAP:\n");
-    for(i=0;i<64;i++) {
+    for(i=0;i<256;i++) {
         printf("%02x ",(unsigned int)rl_memmap[i]);
         if (!((i+1)%16)) printf("\n");
     }
@@ -1547,7 +1547,7 @@ static void ramlink_io2_a0_a3_store(uint16_t addr, uint8_t value)
             rl_cardaddr = (rl_cardaddr & 0x00ffff00) | (value << 24);
             break;
     }
-    i = rl_memmap[(rl_cardaddr >> 20) & 63];
+    i = rl_memmap[(rl_cardaddr >> 20) & 255];
     /* if the memory re-mapping is set to -1, then the bus is open */
     if (i<0) {
         rl_cardbase = -1;
