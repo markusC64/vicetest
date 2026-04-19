@@ -149,7 +149,7 @@ static uint8_t *rl_ram = NULL;
 static uint8_t *rl_rom = NULL;
 static int rl_extexrom = 0;
 static int rl_extgame = 0;
-static int8_t rl_memmap[256];
+static int16_t rl_memmap[256];
 
 /* some prototypes are needed */
 static uint8_t ramlink_io1_read(uint16_t addr);
