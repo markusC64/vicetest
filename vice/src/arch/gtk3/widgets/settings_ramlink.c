@@ -217,7 +217,7 @@ GtkWidget *settings_ramlink_widget_create(GtkWidget *parent)
     gtk_grid_set_row_spacing(GTK_GRID(wrapper), 8);
 
     /* create size widget */
-    size  = vice_gtk3_resource_spin_int_new("RAMLINKsize", 0, 16, 1);
+    size  = vice_gtk3_resource_spin_int_new("RAMLINKsize", 0, 256, 1);
     label = label_helper(CARTRIDGE_NAME_RAMLINK " Size (MiB)");
     gtk_grid_attach(GTK_GRID(wrapper), label, 0, 0, 1, 1);
     gtk_grid_attach(GTK_GRID(wrapper), size,  1, 0, 1, 1);

@@ -112,7 +112,7 @@ cartconv -t rl -i ramlink2.bin -o ramlink2.crt -n "CMD RAMLINK 2.01"
 
 extern unsigned int reg_pc;
 
-/* #define RAMLINKXL */
+#define RAMLINKXL
 
 /* resources */
 static int rl_enabled = 0;
@@ -937,7 +937,7 @@ static int set_size(int size, void *param)
 {
     int i;
 
-    if (size < 0 || size > 64) {
+    if (size < 0 || size > 256) {
         return -1;
     }
     if (size !=  1 && size !=  2 && size !=  3 && size !=  4 &&
@@ -947,6 +947,7 @@ static int set_size(int size, void *param)
         size != 20 && size != 32 &&
         size != 36 && size != 48 && size != 52 && size != 64 &&
         size != 17 && size != 33 && size != 49 &&
+        size < 65 &&
 #endif
         size !=  0) {
         return -1;
